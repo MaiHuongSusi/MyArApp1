@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.myarapp1"
+        minSdkVersion 27
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.12.0'
+}
+
+sceneform.asset('sampledata/arcticFox_Posed.obj',
+        'default',
+        'sampledata/arcticFox_Posed.sfa',
+        'src/main/res/raw/arctic_fox_posed')
+
+sceneform.asset('sampledata/dog.obj',
+        'default',
+        'sampledata/dog.sfa',
+        'src/main/res/raw/dog')
+
+sceneform.asset('sampledata/cat.obj',
+        'default',
+        'sampledata/cat.sfa',
+        'src/main/res/raw/cat')
+
+sceneform.asset('sampledata/train.obj',
+        'default',
+        'sampledata/train.sfa',
+        'src/main/res/raw/train')
+
+sceneform.asset('sampledata/bike.obj',
+        'default',
+        'sampledata/bike.sfa',
+        'src/main/res/raw/bike')
+
+sceneform.asset('sampledata/zebra.obj',
+        'default',
+        'sampledata/zebra.sfa',
+        'src/main/res/raw/zebra')
+
+sceneform.asset('sampledata/knife.obj',
+        'default',
+        'sampledata/knife.sfa',
+        'src/main/res/raw/knife')
+
+sceneform.asset('sampledata/mushroom.obj',
+        'default',
+        'sampledata/mushroom.sfa',
+        'src/main/res/raw/mushroom')

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <fragment android:name="com.google.ar.sceneform.ux.ArFragment"
+        android:id="@+id/arFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/fox"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/arctic_fox" />
+
+            <ImageView
+                android:id="@+id/bike"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/bike" />
+
+            <ImageView
+                android:id="@+id/cat"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/cat" />
+
+            <ImageView
+                android:id="@+id/dog"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/dog" />
+
+            <ImageView
+                android:id="@+id/knife"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/knife" />
+
+            <ImageView
+                android:id="@+id/mushroom"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/mushroom" />
+
+            <ImageView
+                android:id="@+id/train"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/train" />
+
+            <ImageView
+                android:id="@+id/zebra"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/zebra" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</RelativeLayout>
