@@ -7,15 +7,15 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainMenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_menu);
     }
-    public void getStarted(View view) {
-        Intent intent = new Intent(this, MainMenuActivity.class);
+    public void show3DObject(View view) {
+        Intent intent = new Intent(this, ListTopicActivity.class);
         startActivity(intent);
     }
 }
