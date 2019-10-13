@@ -140,6 +140,7 @@
     file: 'sampledata/Cat.obj',
     name: 'Cat',
     recenter: 'root',
+    scale: 0.2529,
   },
   version: '0.54:2',
 }

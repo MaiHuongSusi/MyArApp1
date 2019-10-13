@@ -89,7 +89,7 @@
     file: 'sampledata/Zebra.obj',
     name: 'Zebra',
     recenter: 'root',
-    scale: 0.016788000000000001,
+    scale: 0.001529,
   },
   version: '0.54:2',
 }

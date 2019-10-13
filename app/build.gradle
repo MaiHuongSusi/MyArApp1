@@ -34,11 +34,6 @@ dependencies {
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.12.0'
 }
 
-sceneform.asset('sampledata/arcticFox_Posed.obj',
-        'default',
-        'sampledata/arcticFox_Posed.sfa',
-        'src/main/res/raw/arctic_fox_posed')
-
 sceneform.asset('sampledata/dog.obj',
         'default',
         'sampledata/dog.sfa',
@@ -73,3 +68,78 @@ sceneform.asset('sampledata/mushroom.obj',
         'default',
         'sampledata/mushroom.sfa',
         'src/main/res/raw/mushroom')
+
+sceneform.asset('sampledata/duck.obj',
+        'default',
+        'sampledata/duck.sfa',
+        'src/main/res/raw/duck')
+
+sceneform.asset('sampledata/fox.obj',
+        'default',
+        'sampledata/fox.sfa',
+        'src/main/res/raw/fox')
+
+sceneform.asset('sampledata/Horse_01.obj',
+        'default',
+        'sampledata/Horse_01.sfa',
+        'src/main/res/raw/horse_01')
+
+sceneform.asset('sampledata/cow.obj',
+        'default',
+        'sampledata/cow.sfa',
+        'src/main/res/raw/cow')
+
+sceneform.asset('sampledata/kangaroo.obj',
+        'default',
+        'sampledata/kangaroo.sfa',
+        'src/main/res/raw/kangaroo')
+
+sceneform.asset('sampledata/chicken.obj',
+        'default',
+        'sampledata/chicken.sfa',
+        'src/main/res/raw/chicken')
+
+sceneform.asset('sampledata/sheep.obj',
+        'default',
+        'sampledata/sheep.sfa',
+        'src/main/res/raw/sheep')
+
+sceneform.asset('sampledata/Apple.obj',
+        'default',
+        'sampledata/Apple.sfa',
+        'src/main/res/raw/apple')
+
+sceneform.asset('sampledata/tomato.obj',
+        'default',
+        'sampledata/tomato.sfa',
+        'src/main/res/raw/tomato')
+
+sceneform.asset('sampledata/strawberry.obj',
+        'default',
+        'sampledata/strawberry.sfa',
+        'src/main/res/raw/strawberry')
+
+sceneform.asset('sampledata/carrot.obj',
+        'default',
+        'sampledata/carrot.sfa',
+        'src/main/res/raw/carrot')
+
+sceneform.asset('sampledata/chili.obj',
+        'default',
+        'sampledata/chili.sfa',
+        'src/main/res/raw/chili')
+
+sceneform.asset('sampledata/watermelon.obj',
+        'default',
+        'sampledata/watermelon.sfa',
+        'src/main/res/raw/watermelon')
+
+sceneform.asset('sampledata/Cactus.obj',
+        'default',
+        'sampledata/Cactus.sfa',
+        'src/main/res/raw/cactus')
+
+sceneform.asset('sampledata/Flower.obj',
+        'default',
+        'sampledata/Flower.sfa',
+        'src/main/res/raw/flower')

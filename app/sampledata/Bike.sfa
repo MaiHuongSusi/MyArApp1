@@ -89,7 +89,7 @@
     file: 'sampledata/Bike.obj',
     name: 'Bike',
     recenter: 'root',
-    scale: 0.0093109999999999998,
+    scale: 0.3529,
   },
   version: '0.54:2',
 }

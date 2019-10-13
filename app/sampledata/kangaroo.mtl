@@ -1,0 +1,17 @@
+newmtl bodyShaderSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd kangaroo_body_diffuse_v01.png
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl eyeShaderSG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd kangaroo_eyes_diffuse_v01.png
+bump kangaroo_eyes_diffuse_v01.png -bm 0.05
+Ni 1.00
+Ks 0.50 0.50 0.50
