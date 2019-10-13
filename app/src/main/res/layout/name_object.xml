@@ -5,7 +5,7 @@
     android:textColor="@color/colorPrimaryDark"
     android:gravity="center"
     android:padding="16dp"
-    android:textSize="40sp"
+    android:textSize="20sp"
     android:background="@drawable/row_bg"
     android:textAllCaps="true"
     android:text="LION"

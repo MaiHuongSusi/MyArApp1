@@ -24,10 +24,12 @@ import com.google.ar.sceneform.ux.TransformableNode;
 public class ListHomeActivity extends AppCompatActivity {
 
     private ArFragment arFragment;
-    private ModelRenderable mushroomRenderable, chiliRenderable, flowerRenderable, appleRenderable,
-            cactusRenderable, carrotRenderable, strawberryRenderable,
-            tomatoRenderable, watermelonRenderable;
-    ImageView mushroom, chili, flower, apple, cactus, carrot, strawberry, tomato, watermelon;
+    private ModelRenderable houseRenderable, mordernhouseRenderable, livingroomRenderable,
+            couchRenderable, tvRenderable, remotecontrolRenderable, tableRenderable,
+            kitchenRenderable, kitchen1Renderable, kitchen2Renderable, bedroomRenderable,
+            bathroomRenderable;
+    ImageView house, mordernhouse, livingroom, couch, tv, remotecontrol, table,
+            kitchen, kitchen1, kitchen2, bedroom, bathroom;
     View arrayView[];
     ViewRenderable name_object;
     int selected = 1;
@@ -36,7 +38,7 @@ public class ListHomeActivity extends AppCompatActivity {
     @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_plant);
+        setContentView(R.layout.list_home);
 
         //Anh xa
         map();
@@ -68,86 +70,111 @@ public class ListHomeActivity extends AppCompatActivity {
                 .build()
                 .thenAccept(viewRenderable -> name_object = viewRenderable);
         ModelRenderable.builder()
-                .setSource(this, R.raw.mushroom)
-                .build().thenAccept(modelRenderable -> mushroomRenderable = modelRenderable)
+                .setSource(this, R.raw.house)
+                .build().thenAccept(modelRenderable -> houseRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load mushroom model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load house model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.chili)
-                .build().thenAccept(modelRenderable -> chiliRenderable = modelRenderable)
+                .setSource(this, R.raw.modernhouse)
+                .build().thenAccept(modelRenderable -> mordernhouseRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load chili model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load modern house model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.flower)
-                .build().thenAccept(modelRenderable -> flowerRenderable = modelRenderable)
+                .setSource(this, R.raw.livingroom)
+                .build().thenAccept(modelRenderable -> livingroomRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load flower model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load living room model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.apple)
-                .build().thenAccept(modelRenderable -> appleRenderable = modelRenderable)
+                .setSource(this, R.raw.couch)
+                .build().thenAccept(modelRenderable -> couchRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load apple model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load couch model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.cactus)
-                .build().thenAccept(modelRenderable -> cactusRenderable = modelRenderable)
+                .setSource(this, R.raw.tv)
+                .build().thenAccept(modelRenderable -> tvRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load cactus model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load television model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.carrot)
-                .build().thenAccept(modelRenderable -> carrotRenderable = modelRenderable)
+                .setSource(this, R.raw.remotecontrol)
+                .build().thenAccept(modelRenderable -> remotecontrolRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load carrot model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load remote control model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.strawberry)
-                .build().thenAccept(modelRenderable -> strawberryRenderable = modelRenderable)
+                .setSource(this, R.raw.table)
+                .build().thenAccept(modelRenderable -> tableRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load strawberry model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load table model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.tomato)
-                .build().thenAccept(modelRenderable -> tomatoRenderable = modelRenderable)
+                .setSource(this, R.raw.kitchen)
+                .build().thenAccept(modelRenderable -> kitchenRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load tomato model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load kitchen model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.watermelon)
-                .build().thenAccept(modelRenderable -> watermelonRenderable = modelRenderable)
+                .setSource(this, R.raw.kitchen1)
+                .build().thenAccept(modelRenderable -> kitchen1Renderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load watermelon model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load kitchen model", Toast.LENGTH_SHORT).show();
+                    return null;
+                });
+        ModelRenderable.builder()
+                .setSource(this, R.raw.kitchen2)
+                .build().thenAccept(modelRenderable -> kitchen2Renderable = modelRenderable)
+                .exceptionally(throwable -> {
+                    Toast.makeText(this, "Unable to load kitchen model", Toast.LENGTH_SHORT).show();
+                    return null;
+                });
+        ModelRenderable.builder()
+                .setSource(this, R.raw.bedroom)
+                .build().thenAccept(modelRenderable -> bedroomRenderable = modelRenderable)
+                .exceptionally(throwable -> {
+                    Toast.makeText(this, "Unable to load bedroom model", Toast.LENGTH_SHORT).show();
+                    return null;
+                });
+        ModelRenderable.builder()
+                .setSource(this, R.raw.bathroom)
+                .build().thenAccept(modelRenderable -> bathroomRenderable = modelRenderable)
+                .exceptionally(throwable -> {
+                    Toast.makeText(this, "Unable to load bathroom model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
     }
 
     private void map() {
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
-        mushroom = findViewById(R.id.mushroom);
-        chili = findViewById(R.id.chili);
-        flower = findViewById(R.id.flower);
-        apple = findViewById(R.id.apple);
-        cactus = findViewById(R.id.cactus);
-        carrot = findViewById(R.id.carrot);
-        strawberry = findViewById(R.id.strawberry);
-        tomato = findViewById(R.id.tomato);
-        watermelon = findViewById(R.id.watermelon);
+        house = findViewById(R.id.house);
+        mordernhouse = findViewById(R.id.modernhouse);
+        livingroom = findViewById(R.id.livingroom);
+        couch = findViewById(R.id.couch);
+        tv = findViewById(R.id.tv);
+        remotecontrol = findViewById(R.id.remotecontrol);
+        table = findViewById(R.id.table);
+        kitchen = findViewById(R.id.kitchen);
+        kitchen1 = findViewById(R.id.kitchen1);
+        kitchen2 = findViewById(R.id.kitchen2);
+        bedroom = findViewById(R.id.bedroom);
+        bathroom = findViewById(R.id.bathroom);
     }
 
     private void setArrayView() {
         arrayView = new View[]{
-                mushroom, chili, flower, apple, cactus, carrot, strawberry, tomato, watermelon
+                house, mordernhouse, livingroom, couch, tv, remotecontrol, table,
+                kitchen, kitchen1, kitchen2, bedroom, bathroom
         };
     }
 
@@ -156,32 +183,42 @@ public class ListHomeActivity extends AppCompatActivity {
             arrayView[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (v.getId() == R.id.mushroom) {
+                    if (v.getId() == R.id.house) {
                         selected = 1;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.chili) {
+                    } else if (v.getId() == R.id.modernhouse) {
                         selected = 2;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.flower) {
+                    } else if (v.getId() == R.id.livingroom) {
                         selected = 3;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.apple) {
+                    } else if (v.getId() == R.id.couch) {
                         selected = 4;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.cactus) {
+                    } else if (v.getId() == R.id.tv) {
                         selected = 5;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.carrot) {
+                    } else if (v.getId() == R.id.remotecontrol) {
                         selected = 6;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.strawberry) {
+                    } else if (v.getId() == R.id.table) {
                         selected = 7;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.tomato) {
+
+                    } else if (v.getId() == R.id.kitchen) {
                         selected = 8;
                         setBackground(v.getId());
-                    } else {
+                    } else if (v.getId() == R.id.kitchen1) {
                         selected = 9;
+                        setBackground(v.getId());
+                    } else if (v.getId() == R.id.kitchen2) {
+                        selected = 10;
+                        setBackground(v.getId());
+                    } else if (v.getId() == R.id.bedroom) {
+                        selected = 11;
+                        setBackground(v.getId());
+                    } else {
+                        selected = 12;
                         setBackground(v.getId());
                     }
                 }
@@ -191,67 +228,88 @@ public class ListHomeActivity extends AppCompatActivity {
 
     private void createModel(AnchorNode anchorNode, int selected) {
         if (selected == 1) {
-            TransformableNode mushroom = new TransformableNode(arFragment.getTransformationSystem());
-            mushroom.setParent(anchorNode);
-            mushroom.setRenderable(mushroomRenderable);
-            mushroom.select();
-            addName(anchorNode, mushroom, "Mushroom");
+            TransformableNode house = new TransformableNode(arFragment.getTransformationSystem());
+            house.setParent(anchorNode);
+            house.setRenderable(houseRenderable);
+            house.select();
+            addName(anchorNode, house, "House");
         }
         if (selected == 2) {
-            TransformableNode chili = new TransformableNode(arFragment.getTransformationSystem());
-            chili.setParent(anchorNode);
-            chili.setRenderable(chiliRenderable);
-            chili.select();
-            addName(anchorNode, chili, "Chili");
+            TransformableNode modernhouse = new TransformableNode(arFragment.getTransformationSystem());
+            modernhouse.setParent(anchorNode);
+            modernhouse.setRenderable(mordernhouseRenderable);
+            modernhouse.select();
+            addName(anchorNode, modernhouse, "Modern House");
         }
         if (selected == 3) {
-            TransformableNode flower = new TransformableNode(arFragment.getTransformationSystem());
-            flower.setParent(anchorNode);
-            flower.setRenderable(flowerRenderable);
-            flower.select();
-            addName(anchorNode, flower, "Flower");
+            TransformableNode livingroom = new TransformableNode(arFragment.getTransformationSystem());
+            livingroom.setParent(anchorNode);
+            livingroom.setRenderable(livingroomRenderable);
+            livingroom.select();
+            addName(anchorNode, livingroom, "Living Room");
         }
         if (selected == 4) {
-            TransformableNode apple = new TransformableNode(arFragment.getTransformationSystem());
-            apple.setParent(anchorNode);
-            apple.setRenderable(appleRenderable);
-            apple.select();
-            addName(anchorNode, apple, "Apple");
+            TransformableNode couch = new TransformableNode(arFragment.getTransformationSystem());
+            couch.setParent(anchorNode);
+            couch.setRenderable(couchRenderable);
+            couch.select();
+            addName(anchorNode, couch, "Couch");
         }
         if (selected == 5) {
-            TransformableNode cactus = new TransformableNode(arFragment.getTransformationSystem());
-            cactus.setParent(anchorNode);
-            cactus.setRenderable(cactusRenderable);
-            cactus.select();
-            addName(anchorNode, cactus, "Cactus");
+            TransformableNode tv = new TransformableNode(arFragment.getTransformationSystem());
+            tv.setParent(anchorNode);
+            tv.setRenderable(tvRenderable);
+            tv.select();
+            addName(anchorNode, tv, "Television");
         }
         if (selected == 6) {
-            TransformableNode carrot = new TransformableNode(arFragment.getTransformationSystem());
-            carrot.setParent(anchorNode);
-            carrot.setRenderable(carrotRenderable);
-            carrot.select();
-            addName(anchorNode, carrot, "Carrot");
+            TransformableNode remotecontrol = new TransformableNode(arFragment.getTransformationSystem());
+            remotecontrol.setParent(anchorNode);
+            remotecontrol.setRenderable(remotecontrolRenderable);
+            remotecontrol.select();
+            addName(anchorNode, remotecontrol, "Remote control");
         }
         if (selected == 7) {
-            TransformableNode strawberry = new TransformableNode(arFragment.getTransformationSystem());
-            strawberry.setParent(anchorNode);
-            strawberry.setRenderable(strawberryRenderable);
-            strawberry.select();
-            addName(anchorNode, strawberry, "Strawberry");
+            TransformableNode table = new TransformableNode(arFragment.getTransformationSystem());
+            table.setParent(anchorNode);
+            table.setRenderable(tableRenderable);
+            table.select();
+            addName(anchorNode, table, "Table");
         }
         if (selected == 8) {
-            TransformableNode tomato = new TransformableNode(arFragment.getTransformationSystem());
-            tomato.setParent(anchorNode);
-            tomato.setRenderable(tomatoRenderable);
-            tomato.select();
-            addName(anchorNode, tomato, "Tomato");
+            TransformableNode kitchen = new TransformableNode(arFragment.getTransformationSystem());
+            kitchen.setParent(anchorNode);
+            kitchen.setRenderable(kitchenRenderable);
+            kitchen.select();
+            addName(anchorNode, kitchen, "Kitchen");
         }
         if (selected == 9) {
-            TransformableNode watermelon = new TransformableNode(arFragment.getTransformationSystem());
-            watermelon.setParent(anchorNode);
-            watermelon.setRenderable(watermelonRenderable);
-            watermelon.select();
-            addName(anchorNode, watermelon, "Watermelon");
+            TransformableNode kitchen1 = new TransformableNode(arFragment.getTransformationSystem());
+            kitchen1.setParent(anchorNode);
+            kitchen1.setRenderable(kitchen1Renderable);
+            kitchen1.select();
+            addName(anchorNode, kitchen1, "Kitchen");
+        }
+        if (selected == 10) {
+            TransformableNode kitchen2 = new TransformableNode(arFragment.getTransformationSystem());
+            kitchen2.setParent(anchorNode);
+            kitchen2.setRenderable(kitchen2Renderable);
+            kitchen2.select();
+            addName(anchorNode, kitchen2, "Kitchen");
+        }
+        if (selected == 11) {
+            TransformableNode bedroom = new TransformableNode(arFragment.getTransformationSystem());
+            bedroom.setParent(anchorNode);
+            bedroom.setRenderable(bedroomRenderable);
+            bedroom.select();
+            addName(anchorNode, bedroom, "Bedroom");
+        }
+        if (selected == 12) {
+            TransformableNode bathroom = new TransformableNode(arFragment.getTransformationSystem());
+            bathroom.setParent(anchorNode);
+            bathroom.setRenderable(bathroomRenderable);
+            bathroom.select();
+            addName(anchorNode, bathroom, "Bathroom");
         }
     }
 

@@ -20,64 +20,131 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
-                android:id="@+id/fox"
+                android:id="@+id/house"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/fox" />
+                android:src="@drawable/house" />
 
             <ImageView
-                android:id="@+id/cat"
+                android:id="@+id/modernhouse"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/cat" />
+                android:src="@drawable/house" />
 
             <ImageView
-                android:id="@+id/dog"
+                android:id="@+id/livingroom"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/dog" />
+                android:src="@drawable/house" />
 
             <ImageView
-                android:id="@+id/duck"
+                android:id="@+id/couch"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/duck" />
+                android:src="@drawable/couch" />
 
             <ImageView
-                android:id="@+id/horse"
+                android:id="@+id/tv"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/horse" />
+                android:src="@drawable/tv" />
 
             <ImageView
-                android:id="@+id/zebra"
+                android:id="@+id/remotecontrol"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/zebra" />
+                android:src="@drawable/remotecontrol" />
 
             <ImageView
-                android:id="@+id/sheep"
+                android:id="@+id/table"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/sheep" />
+                android:src="@drawable/table" />
 
             <ImageView
-                android:id="@+id/chicken"
+                android:id="@+id/kitchen"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/chicken" />
+                android:src="@drawable/kitchen" />
 
             <ImageView
-                android:id="@+id/kangaroo"
+                android:id="@+id/kitchen1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/kangaroo" />
+                android:src="@drawable/kitchen" />
 
             <ImageView
-                android:id="@+id/cow"
+                android:id="@+id/kitchen2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/cow" />
+                android:src="@drawable/kitchen" />
+
+            <ImageView
+                android:id="@+id/bedroom"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/bedroom" />
+
+            <ImageView
+                android:id="@+id/bathroom"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/bathroom" />
+
+<!--            <ImageView-->
+<!--                android:id="@+id/cabinet"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:src="@drawable/cabinet" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/chair"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:src="@drawable/chair" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/door"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:src="@drawable/door" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/door1"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:src="@drawable/door" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/picketfence"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:src="@drawable/picketfence" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/gate"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:src="@drawable/gate" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/archway"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:src="@drawable/archway" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/stair"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:src="@drawable/stair" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/clock"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:src="@drawable/clock" />-->
+
         </LinearLayout>
     </HorizontalScrollView>
 

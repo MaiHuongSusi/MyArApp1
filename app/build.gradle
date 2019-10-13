@@ -198,3 +198,108 @@ sceneform.asset('sampledata/crayfish.obj',
         'default',
         'sampledata/crayfish.sfa',
         'src/main/res/raw/crayfish')
+
+sceneform.asset('sampledata/Analog_Clock.obj',
+        'default',
+        'sampledata/Analog_Clock.sfa',
+        'src/main/res/raw/clock')
+
+sceneform.asset('sampledata/Archway.obj',
+        'default',
+        'sampledata/Archway.sfa',
+        'src/main/res/raw/archway')
+
+sceneform.asset('sampledata/bathroom.obj',
+        'default',
+        'sampledata/bathroom.sfa',
+        'src/main/res/raw/bathroom')
+
+sceneform.asset('sampledata/bedroom.obj',
+        'default',
+        'sampledata/bedroom.sfa',
+        'src/main/res/raw/bedroom')
+
+sceneform.asset('sampledata/cabinet.obj',
+        'default',
+        'sampledata/cabinet.sfa',
+        'src/main/res/raw/cabinet')
+
+sceneform.asset('sampledata/chair.obj',
+        'default',
+        'sampledata/chair.sfa',
+        'src/main/res/raw/chair')
+
+sceneform.asset('sampledata/Couch.obj',
+        'default',
+        'sampledata/Couch.sfa',
+        'src/main/res/raw/couch')
+
+sceneform.asset('sampledata/Door.obj',
+        'default',
+        'sampledata/Door.sfa',
+        'src/main/res/raw/door')
+
+sceneform.asset('sampledata/Door1.obj',
+        'default',
+        'sampledata/Door1.sfa',
+        'src/main/res/raw/door1')
+
+sceneform.asset('sampledata/Gate.obj',
+        'default',
+        'sampledata/Gate.sfa',
+        'src/main/res/raw/gate')
+
+sceneform.asset('sampledata/house.obj',
+        'default',
+        'sampledata/house.sfa',
+        'src/main/res/raw/house')
+
+sceneform.asset('sampledata/kitchen.obj',
+        'default',
+        'sampledata/kitchen.sfa',
+        'src/main/res/raw/kitchen')
+
+sceneform.asset('sampledata/Kitchen1.obj',
+        'default',
+        'sampledata/Kitchen1.sfa',
+        'src/main/res/raw/kitchen1')
+
+sceneform.asset('sampledata/kitchen2.obj',
+        'default',
+        'sampledata/kitchen2.sfa',
+        'src/main/res/raw/kitchen2')
+
+sceneform.asset('sampledata/LivingRoom.obj',
+        'default',
+        'sampledata/LivingRoom.sfa',
+        'src/main/res/raw/livingroom')
+
+sceneform.asset('sampledata/modern_house.obj',
+        'default',
+        'sampledata/modern_house.sfa',
+        'src/main/res/raw/modernhouse')
+
+sceneform.asset('sampledata/picketFence.obj',
+        'default',
+        'sampledata/picketFence.sfa',
+        'src/main/res/raw/picketfence')
+
+sceneform.asset('sampledata/Remote control.obj',
+        'default',
+        'sampledata/Remote control.sfa',
+        'src/main/res/raw/remotecontrol')
+
+sceneform.asset('sampledata/stair.obj',
+        'default',
+        'sampledata/stair.sfa',
+        'src/main/res/raw/stair')
+
+sceneform.asset('sampledata/Table.obj',
+        'default',
+        'sampledata/Table.sfa',
+        'src/main/res/raw/table')
+
+sceneform.asset('sampledata/TV.obj',
+        'default',
+        'sampledata/TV.sfa',
+        'src/main/res/raw/tv')
