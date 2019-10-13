@@ -143,3 +143,58 @@ sceneform.asset('sampledata/Flower.obj',
         'default',
         'sampledata/Flower.sfa',
         'src/main/res/raw/flower')
+
+sceneform.asset('sampledata/crab.obj',
+        'default',
+        'sampledata/crab.sfa',
+        'src/main/res/raw/crab')
+
+sceneform.asset('sampledata/turtle.obj',
+        'default',
+        'sampledata/turtle.sfa',
+        'src/main/res/raw/turtle')
+
+sceneform.asset('sampledata/starfish1.obj',
+        'default',
+        'sampledata/starfish1.sfa',
+        'src/main/res/raw/starfish1')
+
+sceneform.asset('sampledata/starfish.obj',
+        'default',
+        'sampledata/starfish.sfa',
+        'src/main/res/raw/starfish')
+
+sceneform.asset('sampledata/squid.obj',
+        'default',
+        'sampledata/squid.sfa',
+        'src/main/res/raw/squid')
+
+sceneform.asset('sampledata/shark.obj',
+        'default',
+        'sampledata/shark.sfa',
+        'src/main/res/raw/shark')
+
+sceneform.asset('sampledata/seahorse.obj',
+        'default',
+        'sampledata/seahorse.sfa',
+        'src/main/res/raw/seahorse')
+
+sceneform.asset('sampledata/octopus.obj',
+        'default',
+        'sampledata/octopus.sfa',
+        'src/main/res/raw/octopus')
+
+sceneform.asset('sampledata/jellyfish.obj',
+        'default',
+        'sampledata/jellyfish.sfa',
+        'src/main/res/raw/jellyfish')
+
+sceneform.asset('sampledata/dolphin.obj',
+        'default',
+        'sampledata/dolphin.sfa',
+        'src/main/res/raw/dolphin')
+
+sceneform.asset('sampledata/crayfish.obj',
+        'default',
+        'sampledata/crayfish.sfa',
+        'src/main/res/raw/crayfish')

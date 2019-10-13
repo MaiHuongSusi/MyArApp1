@@ -24,19 +24,20 @@ import com.google.ar.sceneform.ux.TransformableNode;
 public class ListOceanActivity extends AppCompatActivity {
 
     private ArFragment arFragment;
-    private ModelRenderable mushroomRenderable, chiliRenderable, flowerRenderable, appleRenderable,
-            cactusRenderable, carrotRenderable, strawberryRenderable,
-            tomatoRenderable, watermelonRenderable;
-    ImageView mushroom, chili, flower, apple, cactus, carrot, strawberry, tomato, watermelon;
+    private ModelRenderable crabRenderable, crayfishRenderable, dolphinRenderable,
+            jellyfishRenderable, octopusRenderable, seahorseRenderable, sharkRenderable,
+            squidRenderable, starfishRenderable, turtleRenderable;
+    ImageView crab, crayfish, dolphin, jellyfish, octopus, seahorse, shark, squid, starfish, turtle;
     View arrayView[];
     ViewRenderable name_object;
     int selected = 1;
+
 
     @Override
     @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_plant);
+        setContentView(R.layout.list_ocean);
 
         //Anh xa
         map();
@@ -68,86 +69,94 @@ public class ListOceanActivity extends AppCompatActivity {
                 .build()
                 .thenAccept(viewRenderable -> name_object = viewRenderable);
         ModelRenderable.builder()
-                .setSource(this, R.raw.mushroom)
-                .build().thenAccept(modelRenderable -> mushroomRenderable = modelRenderable)
+                .setSource(this, R.raw.crab)
+                .build().thenAccept(modelRenderable -> crabRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load mushroom model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load crab model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.chili)
-                .build().thenAccept(modelRenderable -> chiliRenderable = modelRenderable)
+                .setSource(this, R.raw.crayfish)
+                .build().thenAccept(modelRenderable -> crayfishRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load chili model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load crayfish model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.flower)
-                .build().thenAccept(modelRenderable -> flowerRenderable = modelRenderable)
+                .setSource(this, R.raw.dolphin)
+                .build().thenAccept(modelRenderable -> dolphinRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load flower model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load dolphin model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.apple)
-                .build().thenAccept(modelRenderable -> appleRenderable = modelRenderable)
+                .setSource(this, R.raw.jellyfish)
+                .build().thenAccept(modelRenderable -> jellyfishRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load apple model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load jellyfish model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.cactus)
-                .build().thenAccept(modelRenderable -> cactusRenderable = modelRenderable)
+                .setSource(this, R.raw.octopus)
+                .build().thenAccept(modelRenderable -> octopusRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load cactus model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load octopus model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.carrot)
-                .build().thenAccept(modelRenderable -> carrotRenderable = modelRenderable)
+                .setSource(this, R.raw.seahorse)
+                .build().thenAccept(modelRenderable -> seahorseRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load carrot model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load seahorse model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.strawberry)
-                .build().thenAccept(modelRenderable -> strawberryRenderable = modelRenderable)
+                .setSource(this, R.raw.shark)
+                .build().thenAccept(modelRenderable -> sharkRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load strawberry model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load shark model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.tomato)
-                .build().thenAccept(modelRenderable -> tomatoRenderable = modelRenderable)
+                .setSource(this, R.raw.squid)
+                .build().thenAccept(modelRenderable -> squidRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load tomato model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load squid model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.watermelon)
-                .build().thenAccept(modelRenderable -> watermelonRenderable = modelRenderable)
+                .setSource(this, R.raw.starfish)
+                .build().thenAccept(modelRenderable -> starfishRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load watermelon model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load starfish model", Toast.LENGTH_SHORT).show();
+                    return null;
+                });
+        ModelRenderable.builder()
+                .setSource(this, R.raw.turtle)
+                .build().thenAccept(modelRenderable -> turtleRenderable = modelRenderable)
+                .exceptionally(throwable -> {
+                    Toast.makeText(this, "Unable to load turtle model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
     }
 
     private void map() {
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
-        mushroom = findViewById(R.id.mushroom);
-        chili = findViewById(R.id.chili);
-        flower = findViewById(R.id.flower);
-        apple = findViewById(R.id.apple);
-        cactus = findViewById(R.id.cactus);
-        carrot = findViewById(R.id.carrot);
-        strawberry = findViewById(R.id.strawberry);
-        tomato = findViewById(R.id.tomato);
-        watermelon = findViewById(R.id.watermelon);
+        crab = findViewById(R.id.crab);
+        crayfish = findViewById(R.id.crayfish);
+        dolphin = findViewById(R.id.dolphin);
+        jellyfish = findViewById(R.id.jellyfish);
+        octopus = findViewById(R.id.octopus);
+        seahorse = findViewById(R.id.seahorse);
+        shark = findViewById(R.id.shark);
+        squid = findViewById(R.id.squid);
+        starfish = findViewById(R.id.starfish);
+        turtle = findViewById(R.id.turtle);
     }
 
     private void setArrayView() {
         arrayView = new View[]{
-                mushroom, chili, flower, apple, cactus, carrot, strawberry, tomato, watermelon
+                crab, crayfish, dolphin, jellyfish, octopus, seahorse, shark, squid, starfish, turtle
         };
     }
 
@@ -156,32 +165,35 @@ public class ListOceanActivity extends AppCompatActivity {
             arrayView[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (v.getId() == R.id.mushroom) {
+                    if (v.getId() == R.id.crab) {
                         selected = 1;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.chili) {
+                    } else if (v.getId() == R.id.crayfish) {
                         selected = 2;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.flower) {
+                    } else if (v.getId() == R.id.dolphin) {
                         selected = 3;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.apple) {
+                    } else if (v.getId() == R.id.jellyfish) {
                         selected = 4;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.cactus) {
+                    } else if (v.getId() == R.id.octopus) {
                         selected = 5;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.carrot) {
+                    } else if (v.getId() == R.id.seahorse) {
                         selected = 6;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.strawberry) {
+                    } else if (v.getId() == R.id.shark) {
                         selected = 7;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.tomato) {
+                    } else if (v.getId() == R.id.squid) {
                         selected = 8;
                         setBackground(v.getId());
-                    } else {
+                    } else if (v.getId() == R.id.starfish) {
                         selected = 9;
+                        setBackground(v.getId());
+                    } else {
+                        selected = 10;
                         setBackground(v.getId());
                     }
                 }
@@ -191,67 +203,74 @@ public class ListOceanActivity extends AppCompatActivity {
 
     private void createModel(AnchorNode anchorNode, int selected) {
         if (selected == 1) {
-            TransformableNode mushroom = new TransformableNode(arFragment.getTransformationSystem());
-            mushroom.setParent(anchorNode);
-            mushroom.setRenderable(mushroomRenderable);
-            mushroom.select();
-            addName(anchorNode, mushroom, "Mushroom");
+            TransformableNode crab = new TransformableNode(arFragment.getTransformationSystem());
+            crab.setParent(anchorNode);
+            crab.setRenderable(crabRenderable);
+            crab.select();
+            addName(anchorNode, crab, "Crab");
         }
         if (selected == 2) {
-            TransformableNode chili = new TransformableNode(arFragment.getTransformationSystem());
-            chili.setParent(anchorNode);
-            chili.setRenderable(chiliRenderable);
-            chili.select();
-            addName(anchorNode, chili, "Chili");
+            TransformableNode crayfish = new TransformableNode(arFragment.getTransformationSystem());
+            crayfish.setParent(anchorNode);
+            crayfish.setRenderable(crayfishRenderable);
+            crayfish.select();
+            addName(anchorNode, crayfish, "Crayfish");
         }
         if (selected == 3) {
-            TransformableNode flower = new TransformableNode(arFragment.getTransformationSystem());
-            flower.setParent(anchorNode);
-            flower.setRenderable(flowerRenderable);
-            flower.select();
-            addName(anchorNode, flower, "Flower");
+            TransformableNode dolphin = new TransformableNode(arFragment.getTransformationSystem());
+            dolphin.setParent(anchorNode);
+            dolphin.setRenderable(dolphinRenderable);
+            dolphin.select();
+            addName(anchorNode, dolphin, "Dolphin");
         }
         if (selected == 4) {
-            TransformableNode apple = new TransformableNode(arFragment.getTransformationSystem());
-            apple.setParent(anchorNode);
-            apple.setRenderable(appleRenderable);
-            apple.select();
-            addName(anchorNode, apple, "Apple");
+            TransformableNode jellyfish = new TransformableNode(arFragment.getTransformationSystem());
+            jellyfish.setParent(anchorNode);
+            jellyfish.setRenderable(jellyfishRenderable);
+            jellyfish.select();
+            addName(anchorNode, jellyfish, "Jellyfish");
         }
         if (selected == 5) {
-            TransformableNode cactus = new TransformableNode(arFragment.getTransformationSystem());
-            cactus.setParent(anchorNode);
-            cactus.setRenderable(cactusRenderable);
-            cactus.select();
-            addName(anchorNode, cactus, "Cactus");
+            TransformableNode octopus = new TransformableNode(arFragment.getTransformationSystem());
+            octopus.setParent(anchorNode);
+            octopus.setRenderable(octopusRenderable);
+            octopus.select();
+            addName(anchorNode, octopus, "Octopus");
         }
         if (selected == 6) {
-            TransformableNode carrot = new TransformableNode(arFragment.getTransformationSystem());
-            carrot.setParent(anchorNode);
-            carrot.setRenderable(carrotRenderable);
-            carrot.select();
-            addName(anchorNode, carrot, "Carrot");
+            TransformableNode seahorse = new TransformableNode(arFragment.getTransformationSystem());
+            seahorse.setParent(anchorNode);
+            seahorse.setRenderable(seahorseRenderable);
+            seahorse.select();
+            addName(anchorNode, seahorse, "Seahorse");
         }
         if (selected == 7) {
-            TransformableNode strawberry = new TransformableNode(arFragment.getTransformationSystem());
-            strawberry.setParent(anchorNode);
-            strawberry.setRenderable(strawberryRenderable);
-            strawberry.select();
-            addName(anchorNode, strawberry, "Strawberry");
+            TransformableNode shark = new TransformableNode(arFragment.getTransformationSystem());
+            shark.setParent(anchorNode);
+            shark.setRenderable(sharkRenderable);
+            shark.select();
+            addName(anchorNode, shark, "Shark");
         }
         if (selected == 8) {
-            TransformableNode tomato = new TransformableNode(arFragment.getTransformationSystem());
-            tomato.setParent(anchorNode);
-            tomato.setRenderable(tomatoRenderable);
-            tomato.select();
-            addName(anchorNode, tomato, "Tomato");
+            TransformableNode squid = new TransformableNode(arFragment.getTransformationSystem());
+            squid.setParent(anchorNode);
+            squid.setRenderable(squidRenderable);
+            squid.select();
+            addName(anchorNode, squid, "Squid");
         }
         if (selected == 9) {
-            TransformableNode watermelon = new TransformableNode(arFragment.getTransformationSystem());
-            watermelon.setParent(anchorNode);
-            watermelon.setRenderable(watermelonRenderable);
-            watermelon.select();
-            addName(anchorNode, watermelon, "Watermelon");
+            TransformableNode starfish = new TransformableNode(arFragment.getTransformationSystem());
+            starfish.setParent(anchorNode);
+            starfish.setRenderable(starfishRenderable);
+            starfish.select();
+            addName(anchorNode, starfish, "Starfish");
+        }
+        if (selected == 10) {
+            TransformableNode turtle = new TransformableNode(arFragment.getTransformationSystem());
+            turtle.setParent(anchorNode);
+            turtle.setRenderable(turtleRenderable);
+            turtle.select();
+            addName(anchorNode, turtle, "Turtle");
         }
     }
 
