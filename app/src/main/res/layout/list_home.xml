@@ -15,10 +15,12 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <ImageView
                 android:id="@+id/house"
                 android:layout_width="100dp"
@@ -29,13 +31,13 @@
                 android:id="@+id/modernhouse"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/house" />
+                android:src="@drawable/modernhouse" />
 
             <ImageView
                 android:id="@+id/livingroom"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/house" />
+                android:src="@drawable/livingroom" />
 
             <ImageView
                 android:id="@+id/couch"
@@ -71,13 +73,7 @@
                 android:id="@+id/kitchen1"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/kitchen" />
-
-            <ImageView
-                android:id="@+id/kitchen2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/kitchen" />
+                android:src="@drawable/kitchen1" />
 
             <ImageView
                 android:id="@+id/bedroom"
@@ -90,60 +86,6 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/bathroom" />
-
-<!--            <ImageView-->
-<!--                android:id="@+id/cabinet"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:src="@drawable/cabinet" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/chair"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:src="@drawable/chair" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/door"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:src="@drawable/door" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/door1"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:src="@drawable/door" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/picketfence"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:src="@drawable/picketfence" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/gate"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:src="@drawable/gate" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/archway"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:src="@drawable/archway" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/stair"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:src="@drawable/stair" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/clock"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:src="@drawable/clock" />-->
 
         </LinearLayout>
     </HorizontalScrollView>

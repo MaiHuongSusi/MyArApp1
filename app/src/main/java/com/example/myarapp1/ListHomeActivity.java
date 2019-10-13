@@ -26,10 +26,9 @@ public class ListHomeActivity extends AppCompatActivity {
     private ArFragment arFragment;
     private ModelRenderable houseRenderable, mordernhouseRenderable, livingroomRenderable,
             couchRenderable, tvRenderable, remotecontrolRenderable, tableRenderable,
-            kitchenRenderable, kitchen1Renderable, kitchen2Renderable, bedroomRenderable,
-            bathroomRenderable;
+            kitchenRenderable, kitchen1Renderable, bedroomRenderable, bathroomRenderable;
     ImageView house, mordernhouse, livingroom, couch, tv, remotecontrol, table,
-            kitchen, kitchen1, kitchen2, bedroom, bathroom;
+            kitchen, kitchen1, bedroom, bathroom;
     View arrayView[];
     ViewRenderable name_object;
     int selected = 1;
@@ -133,13 +132,6 @@ public class ListHomeActivity extends AppCompatActivity {
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.kitchen2)
-                .build().thenAccept(modelRenderable -> kitchen2Renderable = modelRenderable)
-                .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load kitchen model", Toast.LENGTH_SHORT).show();
-                    return null;
-                });
-        ModelRenderable.builder()
                 .setSource(this, R.raw.bedroom)
                 .build().thenAccept(modelRenderable -> bedroomRenderable = modelRenderable)
                 .exceptionally(throwable -> {
@@ -166,7 +158,6 @@ public class ListHomeActivity extends AppCompatActivity {
         table = findViewById(R.id.table);
         kitchen = findViewById(R.id.kitchen);
         kitchen1 = findViewById(R.id.kitchen1);
-        kitchen2 = findViewById(R.id.kitchen2);
         bedroom = findViewById(R.id.bedroom);
         bathroom = findViewById(R.id.bathroom);
     }
@@ -174,7 +165,7 @@ public class ListHomeActivity extends AppCompatActivity {
     private void setArrayView() {
         arrayView = new View[]{
                 house, mordernhouse, livingroom, couch, tv, remotecontrol, table,
-                kitchen, kitchen1, kitchen2, bedroom, bathroom
+                kitchen, kitchen1, bedroom, bathroom
         };
     }
 
@@ -211,14 +202,11 @@ public class ListHomeActivity extends AppCompatActivity {
                     } else if (v.getId() == R.id.kitchen1) {
                         selected = 9;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.kitchen2) {
+                    } else if (v.getId() == R.id.bedroom) {
                         selected = 10;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.bedroom) {
-                        selected = 11;
-                        setBackground(v.getId());
                     } else {
-                        selected = 12;
+                        selected = 11;
                         setBackground(v.getId());
                     }
                 }
@@ -291,20 +279,13 @@ public class ListHomeActivity extends AppCompatActivity {
             addName(anchorNode, kitchen1, "Kitchen");
         }
         if (selected == 10) {
-            TransformableNode kitchen2 = new TransformableNode(arFragment.getTransformationSystem());
-            kitchen2.setParent(anchorNode);
-            kitchen2.setRenderable(kitchen2Renderable);
-            kitchen2.select();
-            addName(anchorNode, kitchen2, "Kitchen");
-        }
-        if (selected == 11) {
             TransformableNode bedroom = new TransformableNode(arFragment.getTransformationSystem());
             bedroom.setParent(anchorNode);
             bedroom.setRenderable(bedroomRenderable);
             bedroom.select();
             addName(anchorNode, bedroom, "Bedroom");
         }
-        if (selected == 12) {
+        if (selected == 11) {
             TransformableNode bathroom = new TransformableNode(arFragment.getTransformationSystem());
             bathroom.setParent(anchorNode);
             bathroom.setRenderable(bathroomRenderable);

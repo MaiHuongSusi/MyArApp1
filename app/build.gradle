@@ -264,11 +264,6 @@ sceneform.asset('sampledata/Kitchen1.obj',
         'sampledata/Kitchen1.sfa',
         'src/main/res/raw/kitchen1')
 
-sceneform.asset('sampledata/kitchen2.obj',
-        'default',
-        'sampledata/kitchen2.sfa',
-        'src/main/res/raw/kitchen2')
-
 sceneform.asset('sampledata/LivingRoom.obj',
         'default',
         'sampledata/LivingRoom.sfa',
