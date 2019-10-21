@@ -24,10 +24,10 @@ import com.google.ar.sceneform.ux.TransformableNode;
 public class ListPersonActivity extends AppCompatActivity {
 
     private ArFragment arFragment;
-    private ModelRenderable mushroomRenderable, chiliRenderable, flowerRenderable, appleRenderable,
-            cactusRenderable, carrotRenderable, strawberryRenderable,
-            tomatoRenderable, watermelonRenderable;
-    ImageView mushroom, chili, flower, apple, cactus, carrot, strawberry, tomato, watermelon;
+    private ModelRenderable breifcaseRenderable, capRenderable, flipflopsRenderable,
+            headphonesRenderable, purseRenderable, sandalsRenderable, sneakersRenderable,
+            stilettosRenderable, sunglassesRenderable, tshirtRenderable;
+    ImageView breifcase, cap, flipflops, headphones, purse, sandals, sneakers, stilettos, sunglasses, tshirt;
     View arrayView[];
     ViewRenderable name_object;
     int selected = 1;
@@ -36,7 +36,7 @@ public class ListPersonActivity extends AppCompatActivity {
     @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_plant);
+        setContentView(R.layout.list_person);
 
         //Anh xa
         map();
@@ -68,86 +68,94 @@ public class ListPersonActivity extends AppCompatActivity {
                 .build()
                 .thenAccept(viewRenderable -> name_object = viewRenderable);
         ModelRenderable.builder()
-                .setSource(this, R.raw.mushroom)
-                .build().thenAccept(modelRenderable -> mushroomRenderable = modelRenderable)
+                .setSource(this, R.raw.breifcase)
+                .build().thenAccept(modelRenderable -> breifcaseRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load mushroom model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load breifcase model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.chili)
-                .build().thenAccept(modelRenderable -> chiliRenderable = modelRenderable)
+                .setSource(this, R.raw.cap)
+                .build().thenAccept(modelRenderable -> capRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load chili model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load cap model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.flower)
-                .build().thenAccept(modelRenderable -> flowerRenderable = modelRenderable)
+                .setSource(this, R.raw.flipflops)
+                .build().thenAccept(modelRenderable -> flipflopsRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load flower model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load flipflops model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.apple)
-                .build().thenAccept(modelRenderable -> appleRenderable = modelRenderable)
+                .setSource(this, R.raw.headphones)
+                .build().thenAccept(modelRenderable -> headphonesRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load apple model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load headphones model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.cactus)
-                .build().thenAccept(modelRenderable -> cactusRenderable = modelRenderable)
+                .setSource(this, R.raw.purse)
+                .build().thenAccept(modelRenderable -> purseRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load cactus model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load purse model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.carrot)
-                .build().thenAccept(modelRenderable -> carrotRenderable = modelRenderable)
+                .setSource(this, R.raw.sandals)
+                .build().thenAccept(modelRenderable -> sandalsRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load carrot model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load sandals model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.strawberry)
-                .build().thenAccept(modelRenderable -> strawberryRenderable = modelRenderable)
+                .setSource(this, R.raw.sneakers)
+                .build().thenAccept(modelRenderable -> sneakersRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load strawberry model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load sneakers model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.tomato)
-                .build().thenAccept(modelRenderable -> tomatoRenderable = modelRenderable)
+                .setSource(this, R.raw.stillettos)
+                .build().thenAccept(modelRenderable -> stilettosRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load tomato model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load stilettos model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.watermelon)
-                .build().thenAccept(modelRenderable -> watermelonRenderable = modelRenderable)
+                .setSource(this, R.raw.sunglasses)
+                .build().thenAccept(modelRenderable -> sunglassesRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load watermelon model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load sunglasses model", Toast.LENGTH_SHORT).show();
+                    return null;
+                });
+        ModelRenderable.builder()
+                .setSource(this, R.raw.tshirt)
+                .build().thenAccept(modelRenderable -> tshirtRenderable = modelRenderable)
+                .exceptionally(throwable -> {
+                    Toast.makeText(this, "Unable to load T-shirt model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
     }
 
     private void map() {
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
-        mushroom = findViewById(R.id.mushroom);
-        chili = findViewById(R.id.chili);
-        flower = findViewById(R.id.flower);
-        apple = findViewById(R.id.apple);
-        cactus = findViewById(R.id.cactus);
-        carrot = findViewById(R.id.carrot);
-        strawberry = findViewById(R.id.strawberry);
-        tomato = findViewById(R.id.tomato);
-        watermelon = findViewById(R.id.watermelon);
+        breifcase = findViewById(R.id.breifcap);
+        cap = findViewById(R.id.cap);
+        flipflops = findViewById(R.id.flipflops);
+        headphones = findViewById(R.id.headphones);
+        purse = findViewById(R.id.purse);
+        sandals = findViewById(R.id.sandals);
+        sneakers = findViewById(R.id.sneakers);
+        stilettos = findViewById(R.id.stillettos);
+        sunglasses = findViewById(R.id.sunglasses);
+        tshirt = findViewById(R.id.tshirt);
     }
 
     private void setArrayView() {
         arrayView = new View[]{
-                mushroom, chili, flower, apple, cactus, carrot, strawberry, tomato, watermelon
+                breifcase, cap, flipflops, headphones, purse, sandals, sneakers, stilettos, sunglasses, tshirt
         };
     }
 
@@ -156,32 +164,35 @@ public class ListPersonActivity extends AppCompatActivity {
             arrayView[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (v.getId() == R.id.mushroom) {
+                    if (v.getId() == R.id.breifcap) {
                         selected = 1;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.chili) {
+                    } else if (v.getId() == R.id.cap) {
                         selected = 2;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.flower) {
+                    } else if (v.getId() == R.id.flipflops) {
                         selected = 3;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.apple) {
+                    } else if (v.getId() == R.id.headphones) {
                         selected = 4;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.cactus) {
+                    } else if (v.getId() == R.id.purse) {
                         selected = 5;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.carrot) {
+                    } else if (v.getId() == R.id.sandals) {
                         selected = 6;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.strawberry) {
+                    } else if (v.getId() == R.id.sneakers) {
                         selected = 7;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.tomato) {
+                    } else if (v.getId() == R.id.stillettos) {
                         selected = 8;
                         setBackground(v.getId());
-                    } else {
+                    } else if (v.getId() == R.id.sunglasses) {
                         selected = 9;
+                        setBackground(v.getId());
+                    } else {
+                        selected = 10;
                         setBackground(v.getId());
                     }
                 }
@@ -191,67 +202,74 @@ public class ListPersonActivity extends AppCompatActivity {
 
     private void createModel(AnchorNode anchorNode, int selected) {
         if (selected == 1) {
-            TransformableNode mushroom = new TransformableNode(arFragment.getTransformationSystem());
-            mushroom.setParent(anchorNode);
-            mushroom.setRenderable(mushroomRenderable);
-            mushroom.select();
-            addName(anchorNode, mushroom, "Mushroom");
+            TransformableNode breifcase = new TransformableNode(arFragment.getTransformationSystem());
+            breifcase.setParent(anchorNode);
+            breifcase.setRenderable(breifcaseRenderable);
+            breifcase.select();
+            addName(anchorNode, breifcase, "breifcase");
         }
         if (selected == 2) {
-            TransformableNode chili = new TransformableNode(arFragment.getTransformationSystem());
-            chili.setParent(anchorNode);
-            chili.setRenderable(chiliRenderable);
-            chili.select();
-            addName(anchorNode, chili, "Chili");
+            TransformableNode cap = new TransformableNode(arFragment.getTransformationSystem());
+            cap.setParent(anchorNode);
+            cap.setRenderable(capRenderable);
+            cap.select();
+            addName(anchorNode, cap, "cap");
         }
         if (selected == 3) {
-            TransformableNode flower = new TransformableNode(arFragment.getTransformationSystem());
-            flower.setParent(anchorNode);
-            flower.setRenderable(flowerRenderable);
-            flower.select();
-            addName(anchorNode, flower, "Flower");
+            TransformableNode flipflops = new TransformableNode(arFragment.getTransformationSystem());
+            flipflops.setParent(anchorNode);
+            flipflops.setRenderable(flipflopsRenderable);
+            flipflops.select();
+            addName(anchorNode, flipflops, "flipflops");
         }
         if (selected == 4) {
-            TransformableNode apple = new TransformableNode(arFragment.getTransformationSystem());
-            apple.setParent(anchorNode);
-            apple.setRenderable(appleRenderable);
-            apple.select();
-            addName(anchorNode, apple, "Apple");
+            TransformableNode headphones = new TransformableNode(arFragment.getTransformationSystem());
+            headphones.setParent(anchorNode);
+            headphones.setRenderable(headphonesRenderable);
+            headphones.select();
+            addName(anchorNode, headphones, "headphones");
         }
         if (selected == 5) {
-            TransformableNode cactus = new TransformableNode(arFragment.getTransformationSystem());
-            cactus.setParent(anchorNode);
-            cactus.setRenderable(cactusRenderable);
-            cactus.select();
-            addName(anchorNode, cactus, "Cactus");
+            TransformableNode purse = new TransformableNode(arFragment.getTransformationSystem());
+            purse.setParent(anchorNode);
+            purse.setRenderable( purseRenderable);
+            purse.select();
+            addName(anchorNode,  purse, "purse");
         }
         if (selected == 6) {
-            TransformableNode carrot = new TransformableNode(arFragment.getTransformationSystem());
-            carrot.setParent(anchorNode);
-            carrot.setRenderable(carrotRenderable);
-            carrot.select();
-            addName(anchorNode, carrot, "Carrot");
+            TransformableNode sandals = new TransformableNode(arFragment.getTransformationSystem());
+            sandals.setParent(anchorNode);
+            sandals.setRenderable(sandalsRenderable);
+            sandals.select();
+            addName(anchorNode, sandals, "sandals");
         }
         if (selected == 7) {
-            TransformableNode strawberry = new TransformableNode(arFragment.getTransformationSystem());
-            strawberry.setParent(anchorNode);
-            strawberry.setRenderable(strawberryRenderable);
-            strawberry.select();
-            addName(anchorNode, strawberry, "Strawberry");
+            TransformableNode sneakers = new TransformableNode(arFragment.getTransformationSystem());
+            sneakers.setParent(anchorNode);
+            sneakers.setRenderable(sneakersRenderable);
+            sneakers.select();
+            addName(anchorNode, sneakers, "sneakers");
         }
         if (selected == 8) {
-            TransformableNode tomato = new TransformableNode(arFragment.getTransformationSystem());
-            tomato.setParent(anchorNode);
-            tomato.setRenderable(tomatoRenderable);
-            tomato.select();
-            addName(anchorNode, tomato, "Tomato");
+            TransformableNode stilettos = new TransformableNode(arFragment.getTransformationSystem());
+            stilettos.setParent(anchorNode);
+            stilettos.setRenderable(stilettosRenderable);
+            stilettos.select();
+            addName(anchorNode, stilettos, "stilettos");
         }
         if (selected == 9) {
-            TransformableNode watermelon = new TransformableNode(arFragment.getTransformationSystem());
-            watermelon.setParent(anchorNode);
-            watermelon.setRenderable(watermelonRenderable);
-            watermelon.select();
-            addName(anchorNode, watermelon, "Watermelon");
+            TransformableNode sunglasses = new TransformableNode(arFragment.getTransformationSystem());
+            sunglasses.setParent(anchorNode);
+            sunglasses.setRenderable(sunglassesRenderable);
+            sunglasses.select();
+            addName(anchorNode, sunglasses, "sunglasses");
+        }
+        if (selected == 10) {
+            TransformableNode tshirt = new TransformableNode(arFragment.getTransformationSystem());
+            tshirt.setParent(anchorNode);
+            tshirt.setRenderable(tshirtRenderable);
+            tshirt.select();
+            addName(anchorNode, tshirt, "T-shirt");
         }
     }
 

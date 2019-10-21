@@ -298,3 +298,53 @@ sceneform.asset('sampledata/TV.obj',
         'default',
         'sampledata/TV.sfa',
         'src/main/res/raw/tv')
+
+sceneform.asset('sampledata/breif case.obj',
+        'default',
+        'sampledata/breif case.sfa',
+        'src/main/res/raw/breifcase')
+
+sceneform.asset('sampledata/purse.obj',
+        'default',
+        'sampledata/purse.sfa',
+        'src/main/res/raw/purse')
+
+sceneform.asset('sampledata/Sneakers.obj',
+        'default',
+        'sampledata/Sneakers.sfa',
+        'src/main/res/raw/sneakers')
+
+sceneform.asset('sampledata/Flip flops.obj',
+        'default',
+        'sampledata/Flip flops.sfa',
+        'src/main/res/raw/flipflops')
+
+sceneform.asset('sampledata/Sandals.obj',
+        'default',
+        'sampledata/Sandals.sfa',
+        'src/main/res/raw/sandals')
+
+sceneform.asset('sampledata/Stillettos.obj',
+        'default',
+        'sampledata/Stillettos.sfa',
+        'src/main/res/raw/stillettos')
+
+sceneform.asset('sampledata/Headphones.obj',
+        'default',
+        'sampledata/Headphones.sfa',
+        'src/main/res/raw/headphones')
+
+sceneform.asset('sampledata/Sunglasses.obj',
+        'default',
+        'sampledata/Sunglasses.sfa',
+        'src/main/res/raw/sunglasses')
+
+sceneform.asset('sampledata/cap.obj',
+        'default',
+        'sampledata/cap.sfa',
+        'src/main/res/raw/cap')
+
+sceneform.asset('sampledata/T-shirt.obj',
+        'default',
+        'sampledata/T-shirt.sfa',
+        'src/main/res/raw/tshirt')
