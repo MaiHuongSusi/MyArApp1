@@ -24,10 +24,10 @@ import com.google.ar.sceneform.ux.TransformableNode;
 public class ListVehicleActivity extends AppCompatActivity {
 
     private ArFragment arFragment;
-    private ModelRenderable mushroomRenderable, chiliRenderable, flowerRenderable, appleRenderable,
-            cactusRenderable, carrotRenderable, strawberryRenderable,
-            tomatoRenderable, watermelonRenderable;
-    ImageView mushroom, chili, flower, apple, cactus, carrot, strawberry, tomato, watermelon;
+
+    private ModelRenderable bikeRenderable, trainRenderable, carRenderable, firetruckRenderable,
+            helicopterRenderable, planeRenderable, boatRenderable, sailboatRenderable;
+    ImageView bike, train, car, firetruck, helicopter, plane, boat, sailboat;
     View arrayView[];
     ViewRenderable name_object;
     int selected = 1;
@@ -36,7 +36,7 @@ public class ListVehicleActivity extends AppCompatActivity {
     @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_plant);
+        setContentView(R.layout.list_vehicle);
 
         //Anh xa
         map();
@@ -68,86 +68,78 @@ public class ListVehicleActivity extends AppCompatActivity {
                 .build()
                 .thenAccept(viewRenderable -> name_object = viewRenderable);
         ModelRenderable.builder()
-                .setSource(this, R.raw.mushroom)
-                .build().thenAccept(modelRenderable -> mushroomRenderable = modelRenderable)
+                .setSource(this, R.raw.bike)
+                .build().thenAccept(modelRenderable -> bikeRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load mushroom model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load bike model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.chili)
-                .build().thenAccept(modelRenderable -> chiliRenderable = modelRenderable)
+                .setSource(this, R.raw.train)
+                .build().thenAccept(modelRenderable -> trainRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load chili model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load train model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.flower)
-                .build().thenAccept(modelRenderable -> flowerRenderable = modelRenderable)
+                .setSource(this, R.raw.car)
+                .build().thenAccept(modelRenderable -> carRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load flower model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load car model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.apple)
-                .build().thenAccept(modelRenderable -> appleRenderable = modelRenderable)
+                .setSource(this, R.raw.firetruck)
+                .build().thenAccept(modelRenderable -> firetruckRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load apple model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load firetruck model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.cactus)
-                .build().thenAccept(modelRenderable -> cactusRenderable = modelRenderable)
+                .setSource(this, R.raw.helicopter)
+                .build().thenAccept(modelRenderable -> helicopterRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load cactus model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load helicopter model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.carrot)
-                .build().thenAccept(modelRenderable -> carrotRenderable = modelRenderable)
+                .setSource(this, R.raw.plane)
+                .build().thenAccept(modelRenderable -> planeRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load carrot model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load plane model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.strawberry)
-                .build().thenAccept(modelRenderable -> strawberryRenderable = modelRenderable)
+                .setSource(this, R.raw.boat)
+                .build().thenAccept(modelRenderable -> boatRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load strawberry model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load boat model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.tomato)
-                .build().thenAccept(modelRenderable -> tomatoRenderable = modelRenderable)
+                .setSource(this, R.raw.sailboat)
+                .build().thenAccept(modelRenderable -> sailboatRenderable = modelRenderable)
                 .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load tomato model", Toast.LENGTH_SHORT).show();
-                    return null;
-                });
-        ModelRenderable.builder()
-                .setSource(this, R.raw.watermelon)
-                .build().thenAccept(modelRenderable -> watermelonRenderable = modelRenderable)
-                .exceptionally(throwable -> {
-                    Toast.makeText(this, "Unable to load watermelon model", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Unable to load sailboat model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
     }
 
     private void map() {
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
-        mushroom = findViewById(R.id.mushroom);
-        chili = findViewById(R.id.chili);
-        flower = findViewById(R.id.flower);
-        apple = findViewById(R.id.apple);
-        cactus = findViewById(R.id.cactus);
-        carrot = findViewById(R.id.carrot);
-        strawberry = findViewById(R.id.strawberry);
-        tomato = findViewById(R.id.tomato);
-        watermelon = findViewById(R.id.watermelon);
+        bike = findViewById(R.id.bike);
+        train = findViewById(R.id.train);
+        car = findViewById(R.id.car);
+        firetruck = findViewById(R.id.firetruck);
+        helicopter = findViewById(R.id.helicopter);
+        plane = findViewById(R.id.plane);
+        boat = findViewById(R.id.boat);
+        sailboat = findViewById(R.id.sailboat);
     }
 
     private void setArrayView() {
         arrayView = new View[]{
-                mushroom, chili, flower, apple, cactus, carrot, strawberry, tomato, watermelon
+                bike, train, car, firetruck, helicopter, plane, boat, sailboat
         };
     }
 
@@ -156,32 +148,29 @@ public class ListVehicleActivity extends AppCompatActivity {
             arrayView[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (v.getId() == R.id.mushroom) {
+                    if (v.getId() == R.id.bike) {
                         selected = 1;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.chili) {
+                    } else if (v.getId() == R.id.train) {
                         selected = 2;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.flower) {
+                    } else if (v.getId() == R.id.car) {
                         selected = 3;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.apple) {
+                    }  else if (v.getId() == R.id.firetruck) {
                         selected = 4;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.cactus) {
+                    } else if (v.getId() == R.id.helicopter) {
                         selected = 5;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.carrot) {
+                    } else if (v.getId() == R.id.plane) {
                         selected = 6;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.strawberry) {
+                    } else if (v.getId() == R.id.boat) {
                         selected = 7;
                         setBackground(v.getId());
-                    } else if (v.getId() == R.id.tomato) {
-                        selected = 8;
-                        setBackground(v.getId());
                     } else {
-                        selected = 9;
+                        selected = 8;
                         setBackground(v.getId());
                     }
                 }
@@ -191,67 +180,60 @@ public class ListVehicleActivity extends AppCompatActivity {
 
     private void createModel(AnchorNode anchorNode, int selected) {
         if (selected == 1) {
-            TransformableNode mushroom = new TransformableNode(arFragment.getTransformationSystem());
-            mushroom.setParent(anchorNode);
-            mushroom.setRenderable(mushroomRenderable);
-            mushroom.select();
-            addName(anchorNode, mushroom, "Mushroom");
+            TransformableNode bike = new TransformableNode(arFragment.getTransformationSystem());
+            bike.setParent(anchorNode);
+            bike.setRenderable(bikeRenderable);
+            bike.select();
+            addName(anchorNode, bike, "Bike");
         }
         if (selected == 2) {
-            TransformableNode chili = new TransformableNode(arFragment.getTransformationSystem());
-            chili.setParent(anchorNode);
-            chili.setRenderable(chiliRenderable);
-            chili.select();
-            addName(anchorNode, chili, "Chili");
+            TransformableNode train = new TransformableNode(arFragment.getTransformationSystem());
+            train.setParent(anchorNode);
+            train.setRenderable(trainRenderable);
+            train.select();
+            addName(anchorNode, train, "Train");
         }
         if (selected == 3) {
-            TransformableNode flower = new TransformableNode(arFragment.getTransformationSystem());
-            flower.setParent(anchorNode);
-            flower.setRenderable(flowerRenderable);
-            flower.select();
-            addName(anchorNode, flower, "Flower");
+            TransformableNode car = new TransformableNode(arFragment.getTransformationSystem());
+            car.setParent(anchorNode);
+            car.setRenderable(carRenderable);
+            car.select();
+            addName(anchorNode, car, "Car");
         }
         if (selected == 4) {
-            TransformableNode apple = new TransformableNode(arFragment.getTransformationSystem());
-            apple.setParent(anchorNode);
-            apple.setRenderable(appleRenderable);
-            apple.select();
-            addName(anchorNode, apple, "Apple");
+            TransformableNode firetruck = new TransformableNode(arFragment.getTransformationSystem());
+            firetruck.setParent(anchorNode);
+            firetruck.setRenderable(firetruckRenderable);
+            firetruck.select();
+            addName(anchorNode, firetruck, "firetruck");
         }
         if (selected == 5) {
-            TransformableNode cactus = new TransformableNode(arFragment.getTransformationSystem());
-            cactus.setParent(anchorNode);
-            cactus.setRenderable(cactusRenderable);
-            cactus.select();
-            addName(anchorNode, cactus, "Cactus");
+            TransformableNode helicopter = new TransformableNode(arFragment.getTransformationSystem());
+            helicopter.setParent(anchorNode);
+            helicopter.setRenderable(helicopterRenderable);
+            helicopter.select();
+            addName(anchorNode, helicopter, "helicopter");
         }
         if (selected == 6) {
-            TransformableNode carrot = new TransformableNode(arFragment.getTransformationSystem());
-            carrot.setParent(anchorNode);
-            carrot.setRenderable(carrotRenderable);
-            carrot.select();
-            addName(anchorNode, carrot, "Carrot");
+            TransformableNode plane = new TransformableNode(arFragment.getTransformationSystem());
+            plane.setParent(anchorNode);
+            plane.setRenderable(planeRenderable);
+            plane.select();
+            addName(anchorNode, plane, "plane");
         }
         if (selected == 7) {
-            TransformableNode strawberry = new TransformableNode(arFragment.getTransformationSystem());
-            strawberry.setParent(anchorNode);
-            strawberry.setRenderable(strawberryRenderable);
-            strawberry.select();
-            addName(anchorNode, strawberry, "Strawberry");
+            TransformableNode boat = new TransformableNode(arFragment.getTransformationSystem());
+            boat.setParent(anchorNode);
+            boat.setRenderable(boatRenderable);
+            boat.select();
+            addName(anchorNode, boat, "boat");
         }
         if (selected == 8) {
-            TransformableNode tomato = new TransformableNode(arFragment.getTransformationSystem());
-            tomato.setParent(anchorNode);
-            tomato.setRenderable(tomatoRenderable);
-            tomato.select();
-            addName(anchorNode, tomato, "Tomato");
-        }
-        if (selected == 9) {
-            TransformableNode watermelon = new TransformableNode(arFragment.getTransformationSystem());
-            watermelon.setParent(anchorNode);
-            watermelon.setRenderable(watermelonRenderable);
-            watermelon.select();
-            addName(anchorNode, watermelon, "Watermelon");
+            TransformableNode sailboat = new TransformableNode(arFragment.getTransformationSystem());
+            sailboat.setParent(anchorNode);
+            sailboat.setRenderable(sailboatRenderable);
+            sailboat.select();
+            addName(anchorNode, sailboat, "sailboat");
         }
     }
 

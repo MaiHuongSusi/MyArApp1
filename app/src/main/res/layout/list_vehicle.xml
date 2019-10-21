@@ -19,65 +19,55 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/fox"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/fox" />
 
             <ImageView
-                android:id="@+id/cat"
+                android:id="@+id/bike"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/cat" />
+                android:src="@drawable/bike" />
 
             <ImageView
-                android:id="@+id/dog"
+                android:id="@+id/train"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/dog" />
+                android:src="@drawable/train" />
 
             <ImageView
-                android:id="@+id/duck"
+                android:id="@+id/car"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/duck" />
+                android:src="@drawable/car" />
 
             <ImageView
-                android:id="@+id/horse"
+                android:id="@+id/firetruck"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/horse" />
+                android:src="@drawable/firetruck" />
 
             <ImageView
-                android:id="@+id/zebra"
+                android:id="@+id/helicopter"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/zebra" />
+                android:src="@drawable/helicopter" />
 
             <ImageView
-                android:id="@+id/sheep"
+                android:id="@+id/plane"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/sheep" />
+                android:src="@drawable/plane" />
 
             <ImageView
-                android:id="@+id/chicken"
+                android:id="@+id/boat"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/chicken" />
+                android:src="@drawable/boat" />
 
             <ImageView
-                android:id="@+id/kangaroo"
+                android:id="@+id/sailboat"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/kangaroo" />
+                android:src="@drawable/sailboat" />
 
-            <ImageView
-                android:id="@+id/cow"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/cow" />
         </LinearLayout>
     </HorizontalScrollView>
 

@@ -49,11 +49,6 @@ sceneform.asset('sampledata/train.obj',
         'sampledata/train.sfa',
         'src/main/res/raw/train')
 
-sceneform.asset('sampledata/bike.obj',
-        'default',
-        'sampledata/bike.sfa',
-        'src/main/res/raw/bike')
-
 sceneform.asset('sampledata/zebra.obj',
         'default',
         'sampledata/zebra.sfa',
@@ -348,3 +343,38 @@ sceneform.asset('sampledata/T-shirt.obj',
         'default',
         'sampledata/T-shirt.sfa',
         'src/main/res/raw/tshirt')
+
+sceneform.asset('sampledata/boat.obj',
+        'default',
+        'sampledata/boat.sfa',
+        'src/main/res/raw/boat')
+
+sceneform.asset('sampledata/Sailboat.obj',
+        'default',
+        'sampledata/Sailboat.sfa',
+        'src/main/res/raw/sailboat')
+
+sceneform.asset('sampledata/car.obj',
+        'default',
+        'sampledata/car.sfa',
+        'src/main/res/raw/car')
+
+sceneform.asset('sampledata/Helicopter.obj',
+        'default',
+        'sampledata/Helicopter.sfa',
+        'src/main/res/raw/helicopter')
+
+sceneform.asset('sampledata/plane.obj',
+        'default',
+        'sampledata/plane.sfa',
+        'src/main/res/raw/plane')
+
+sceneform.asset('sampledata/firetruck.obj',
+        'default',
+        'sampledata/firetruck.sfa',
+        'src/main/res/raw/firetruck')
+
+sceneform.asset('sampledata/Bike.obj',
+        'default',
+        'sampledata/Bike.sfa',
+        'src/main/res/raw/bike')

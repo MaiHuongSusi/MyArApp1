@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ListTopicActivity extends AppCompatActivity {
     Topic[] arrayTopic = new Topic[3];
-    String[] list_topic = {"Ocean", "Home", "Person", "Tool", "Animal", "Plant", "Vehicle"};
+    String[] list_topic = {"Ocean", "Home", "Person", "Animal", "Plant", "Vehicle"};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,15 +50,12 @@ public class ListTopicActivity extends AppCompatActivity {
                         intent = new Intent(ListTopicActivity.this, ListPersonActivity.class);
                         break;
                     case 3:
-                        intent = new Intent(ListTopicActivity.this, ListToolActivity.class);
-                        break;
-                    case 4:
                         intent = new Intent(ListTopicActivity.this, ListAnimalActivity.class);
                         break;
-                    case 5:
+                    case 4:
                         intent = new Intent(ListTopicActivity.this, ListPlantActivity.class);
                         break;
-                    case 6:
+                    case 5:
                         intent = new Intent(ListTopicActivity.this, ListVehicleActivity.class);
                         break;
                 }

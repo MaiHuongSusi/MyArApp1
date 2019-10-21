@@ -1,24 +1,24 @@
 {
   materials: [
     {
-      name: 'mat4',
+      name: '08___Default',
       parameters: [
         {
           baseColor: null,
         },
         {
           baseColorTint: [
-            0,
-            0.73999999999999999,
-            0.82999999999999996,
+            1,
+            0.090200000000000002,
+            0.090200000000000002,
             1,
           ],
         },
         {
-          metallic: 0,
+          metallic: 1,
         },
         {
-          roughness: 0.5,
+          roughness: 0.408248,
         },
         {
           opacity: null,
@@ -27,24 +27,24 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'mat8',
+      name: '19___Default',
       parameters: [
         {
           baseColor: null,
         },
         {
           baseColorTint: [
-            0.95999999999999996,
-            0.26000000000000001,
-            0.20999999999999999,
+            0.97650000000000003,
+            0.85489999999999999,
+            0.65880000000000005,
             1,
           ],
         },
         {
-          metallic: 0,
+          metallic: 1,
         },
         {
-          roughness: 1,
+          roughness: 0.408248,
         },
         {
           opacity: null,
@@ -53,24 +53,24 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'mat12',
+      name: '13___Default',
       parameters: [
         {
           baseColor: null,
         },
         {
           baseColorTint: [
-            1,
-            0.92000000000000004,
-            0.23000000000000001,
+            0.90200000000000002,
+            0.90200000000000002,
+            0.90200000000000002,
             1,
           ],
         },
         {
-          metallic: 0,
+          metallic: 1,
         },
         {
-          roughness: 1,
+          roughness: 0.408248,
         },
         {
           opacity: null,
@@ -79,24 +79,24 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'mat15',
+      name: '09___Default',
       parameters: [
         {
           baseColor: null,
         },
         {
           baseColorTint: [
-            0.81000000000000005,
-            0.84999999999999998,
-            0.85999999999999999,
+            0.94899999999999995,
+            0.97650000000000003,
+            0.18429999999999999,
             1,
           ],
         },
         {
-          metallic: 0,
+          metallic: 1,
         },
         {
-          roughness: 1,
+          roughness: 0.408248,
         },
         {
           opacity: null,
@@ -105,24 +105,24 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'mat16',
+      name: '14___Default',
       parameters: [
         {
           baseColor: null,
         },
         {
           baseColorTint: [
-            0.46999999999999997,
-            0.56000000000000005,
-            0.60999999999999999,
+            0.27450000000000002,
+            0.80000000000000004,
+            0.97250000000000003,
             1,
           ],
         },
         {
-          metallic: 0,
+          metallic: 1,
         },
         {
-          roughness: 1,
+          roughness: 0.408248,
         },
         {
           opacity: null,
@@ -131,24 +131,24 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'mat20',
+      name: '15___Default',
       parameters: [
         {
           baseColor: null,
         },
         {
           baseColorTint: [
-            0.46999999999999997,
-            0.33000000000000002,
-            0.28000000000000003,
+            0.039199999999999999,
+            0.039199999999999999,
+            0.039199999999999999,
             1,
           ],
         },
         {
-          metallic: 0,
+          metallic: 1,
         },
         {
-          roughness: 1,
+          roughness: 0.408248,
         },
         {
           opacity: null,
@@ -157,79 +157,27 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'mat22',
+      name: '07___Default',
       parameters: [
         {
           baseColor: null,
         },
         {
           baseColorTint: [
-            0.62,
-            0.62,
-            0.62,
+            0.58819999999999995,
+            0.58819999999999995,
+            0.58819999999999995,
             1,
           ],
         },
         {
-          metallic: 0,
+          metallic: 1,
         },
         {
-          roughness: 1,
+          roughness: 0.408248,
         },
         {
           opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
-    },
-    {
-      name: 'mat23',
-      parameters: [
-        {
-          baseColor: null,
-        },
-        {
-          baseColorTint: [
-            0.10000000000000001,
-            0.10000000000000001,
-            0.10000000000000001,
-            1,
-          ],
-        },
-        {
-          metallic: 0,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
-    },
-    {
-      name: 'mat24',
-      parameters: [
-        {
-          baseColor: null,
-        },
-        {
-          baseColorTint: [
-            0.92000000000000004,
-            0.94999999999999996,
-            0.93999999999999995,
-            1,
-          ],
-        },
-        {
-          metallic: 0,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          opacity: 0.40000000000000002,
         },
       ],
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
@@ -238,13 +186,14 @@
   model: {
     attributes: [
       'Position',
+      'TexCoord',
       'Orientation',
     ],
     collision: {},
-    file: 'sampledata/Train.obj',
-    name: 'Train',
+    file: 'sampledata/Sailboat.obj',
+    name: 'Sailboat',
     recenter: 'root',
-    scale: 0.304865,
+    scale: 0.0009540000000000001,
   },
   version: '0.54:2',
 }

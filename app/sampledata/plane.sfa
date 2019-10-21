@@ -1,16 +1,16 @@
 {
   materials: [
     {
-      name: 'default',
+      name: 'mat5',
       parameters: [
         {
           baseColor: null,
         },
         {
           baseColorTint: [
-            1,
-            1,
-            1,
+            0.01,
+            0.60999999999999999,
+            0.90000000000000002,
             1,
           ],
         },
@@ -27,42 +27,16 @@
       source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
     },
     {
-      name: 'Mat',
+      name: 'mat21',
       parameters: [
         {
           baseColor: null,
         },
         {
           baseColorTint: [
-            0.17108200000000001,
-            0.17108200000000001,
-            0.17108200000000001,
             1,
-          ],
-        },
-        {
-          metallic: 0,
-        },
-        {
-          roughness: 1,
-        },
-        {
-          opacity: null,
-        },
-      ],
-      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
-    },
-    {
-      name: 'Mat.2',
-      parameters: [
-        {
-          baseColor: null,
-        },
-        {
-          baseColorTint: [
-            0.893401,
-            0.65062600000000004,
-            0.23128699999999999,
+            1,
+            1,
             1,
           ],
         },
@@ -86,10 +60,11 @@
       'Orientation',
     ],
     collision: {},
-    file: 'sampledata/Bike.obj',
-    name: 'Bike',
+    file: 'sampledata/plane.obj',
+    name: 'plane',
     recenter: 'root',
-    scale: 0.00093109999999999998,
+    scale: 0.1529,
+
   },
   version: '0.54:2',
 }
