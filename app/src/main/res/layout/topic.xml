@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/textView"
-    android:textColor="@color/colorPrimaryDark"
-    android:gravity="center"
-    android:padding="16dp"
-    android:textSize="40sp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:shape="rectangle">
+    <!--    <gradient-->
+    <!--        android:angle="270"-->
+    <!--        android:centerColor="#ff518e"-->
+    <!--        android:endColor="#fe7f92"-->
+    <!--        android:startColor="#e6148f" />-->
+    <!--    <corners-->
+    <!--        android:radius="30dp">-->
+    <!--</corners>-->
+    <stroke
+        android:width="2dp"
+        android:color="#ffffff"></stroke>
 
-</TextView>
+    <corners android:radius="50dp"></corners>
+</shape><!--<TextView-->
+    <!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    android:id="@+id/textView"-->
+    <!--    android:textColor="@color/colorPrimaryDark"-->
+    <!--    android:gravity="center"-->
+    <!--    android:padding="16dp"-->
+    <!--    android:textSize="40sp"-->
+    <!--    android:layout_width="wrap_content"-->
+    <!--    android:layout_height="wrap_content">-->
+
+    <!--</TextView>-->

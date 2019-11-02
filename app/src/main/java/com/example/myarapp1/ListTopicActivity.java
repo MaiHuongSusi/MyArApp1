@@ -3,62 +3,66 @@ package com.example.myarapp1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ListTopicActivity extends AppCompatActivity {
-    Topic[] arrayTopic = new Topic[3];
-    String[] list_topic = {"Ocean", "Home", "Person", "Animal", "Plant", "Vehicle"};
+    ImageView ocean, home, person, animal, plant, vehicle;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_topic);
 
-        for ( int i=0; i<arrayTopic.length; i++) {
-            arrayTopic[i]=new Topic();
-        }
+        ocean = findViewById(R.id.ocean);
+        home = findViewById(R.id.home);
+        person = findViewById(R.id.person);
+        animal = findViewById(R.id.animal);
+        plant = findViewById(R.id.plant);
+        vehicle = findViewById(R.id.vehicle);
 
-        for (int i=0; i<arrayTopic.length; i++) {
-            arrayTopic[i].topicId=i+1;
-            arrayTopic[i].topicName = list_topic[i];
-            arrayTopic[i].size = 10;
-        }
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,
-                R.layout.topic, list_topic);
-
-        ListView listView = findViewById(R.id.listView);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ocean.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent();
-                switch (position) {
-                    case 0:
-                        intent = new Intent(ListTopicActivity.this, ListOceanActivity.class);
-                        break;
-                    case 1:
-                        intent = new Intent(ListTopicActivity.this, ListHomeActivity.class);
-                        break;
-                    case 2:
-                        intent = new Intent(ListTopicActivity.this, ListPersonActivity.class);
-                        break;
-                    case 3:
-                        intent = new Intent(ListTopicActivity.this, ListAnimalActivity.class);
-                        break;
-                    case 4:
-                        intent = new Intent(ListTopicActivity.this, ListPlantActivity.class);
-                        break;
-                    case 5:
-                        intent = new Intent(ListTopicActivity.this, ListVehicleActivity.class);
-                        break;
-                }
+            public void onClick(View v) {
+                Intent intent = new Intent(ListTopicActivity.this, ListOceanActivity.class);
+                startActivity(intent);
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListTopicActivity.this, ListHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+        person.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListTopicActivity.this, ListPersonActivity.class);
+                startActivity(intent);
+            }
+        });
+        animal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListTopicActivity.this, ListAnimalActivity.class);
+                startActivity(intent);
+            }
+        });
+        plant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListTopicActivity.this, ListPlantActivity.class);
+                startActivity(intent);
+            }
+        });
+        vehicle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListTopicActivity.this, ListVehicleActivity.class);
                 startActivity(intent);
             }
         });

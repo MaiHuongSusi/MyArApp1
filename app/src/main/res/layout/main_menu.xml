@@ -25,11 +25,12 @@
         android:layout_height="165dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginBottom="162dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginBottom="89dp"
         android:background="@drawable/menu_block_1"
         android:onClick="show3DObject"
-        android:text="3D Object" />
+        android:text="3D Object"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/button3"
@@ -37,9 +38,10 @@
         android:layout_height="165dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="26dp"
         android:background="@drawable/menu_block_2"
-        android:text="Sticker" />
+        android:text="Sticker"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>

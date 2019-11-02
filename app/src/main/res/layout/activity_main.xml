@@ -11,7 +11,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/bg_main" />
+        app:srcCompat="@drawable/bg_main2" />
 
     <Button
         android:id="@+id/btnGetStarted"
@@ -19,13 +19,14 @@
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="106dp"
         android:background="@drawable/custom_gradien_button"
         android:onClick="getStarted"
-        android:paddingLeft="80dp"
-        android:paddingRight="80dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
         android:text="Contintue"
         android:textColor="#F2F0F3"
-        android:textSize="12dp" />
+        android:textSize="12dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
