@@ -15,7 +15,11 @@ public class MainMenuActivity extends AppCompatActivity {
         setContentView(R.layout.main_menu);
     }
     public void show3DObject(View view) {
-        Intent intent = new Intent(this, ListTopicActivity.class);
+        Intent intent = new Intent(MainMenuActivity.this, ListTopicActivity.class);
+        startActivity(intent);
+    }
+    public void showSticker(View view) {
+        Intent intent = new Intent(MainMenuActivity.this, StickerActivity.class);
         startActivity(intent);
     }
 }

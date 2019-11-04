@@ -33,6 +33,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.12.0'
     implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.ar.sceneform:animation:1.13.0'
 }
 
 sceneform.asset('sampledata/dog.obj',
@@ -379,3 +380,13 @@ sceneform.asset('sampledata/Bike.obj',
         'default',
         'sampledata/Bike.sfa',
         'src/main/res/raw/bike')
+
+sceneform.asset('sampledata/skeleton/58_Movement_LODa_r01.fbx',
+        'default',
+        'sampledata/skeleton/58_Movement_LODa_r01.sfa',
+        'src/main/res/raw/skeleton')
+
+sceneform.asset('sampledata/Mustache.obj',
+        'default',
+        'sampledata/Mustache.sfa',
+        'src/main/res/raw/mustache')

@@ -1,37 +1,51 @@
 package com.example.myarapp1;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.media.CamcorderProfile;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.ar.core.Anchor;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
 import com.google.ar.sceneform.AnchorNode;
+import com.google.ar.sceneform.animation.ModelAnimator;
 import com.google.ar.sceneform.math.Vector3;
+import com.google.ar.sceneform.rendering.AnimationData;
+import com.google.ar.sceneform.rendering.MaterialFactory;
 import com.google.ar.sceneform.rendering.ModelRenderable;
+import com.google.ar.sceneform.rendering.ShapeFactory;
 import com.google.ar.sceneform.rendering.ViewRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.BaseArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
+
+import static android.graphics.Color.TRANSPARENT;
+import static android.graphics.Color.parseColor;
 
 public class ListOceanActivity extends AppCompatActivity {
 
     private ArFragment arFragment;
     private ModelRenderable crabRenderable, crayfishRenderable, dolphinRenderable,
             jellyfishRenderable, octopusRenderable, seahorseRenderable, sharkRenderable,
-            squidRenderable, starfishRenderable, turtleRenderable;
-    ImageView crab, crayfish, dolphin, jellyfish, octopus, seahorse, shark, squid, starfish, turtle;
+            squidRenderable, starfishRenderable, turtleRenderable, skeletonRenderable;
+    ImageView crab, crayfish, dolphin, jellyfish, octopus, seahorse, shark, squid, starfish, turtle, skeleton;
     View arrayView[];
     ViewRenderable name_object;
     int selected = 1;
-
+    private VideoRecorder videoRecorder;
+    private ModelAnimator modelAnimator;
+    private int i = 0;
 
     @Override
     @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
@@ -54,13 +68,70 @@ public class ListOceanActivity extends AppCompatActivity {
         arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
             @Override
             public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
-                Anchor anchor = hitResult.createAnchor();
-                AnchorNode anchorNode = new AnchorNode(anchor);
-                anchorNode.setParent(arFragment.getArSceneView().getScene());
+                MaterialFactory.makeOpaqueWithColor(ListOceanActivity.this, new com.google.ar.sceneform.rendering.Color(Color.RED))
+                        .thenAccept(material -> {
+                            ModelRenderable renderable = ShapeFactory
+                                    .makeSphere(0.3f, new Vector3(0f, 0.3f, 0f), material);
 
-                createModel(anchorNode, selected);
+                            Anchor anchor = hitResult.createAnchor();
+                            AnchorNode anchorNode = new AnchorNode(anchor);
+                            anchorNode.setParent(arFragment.getArSceneView().getScene());
+
+                            createModel(anchorNode, selected);
+                        });
             }
         });
+
+        Button record = findViewById(R.id.record);
+        record.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (videoRecorder == null) {
+                    videoRecorder = new VideoRecorder();
+                    videoRecorder.setSceneView(arFragment.getArSceneView());
+                    int orientation = getResources().getConfiguration().orientation;
+                    videoRecorder.setVideoQuality(CamcorderProfile.QUALITY_HIGH, orientation);
+                }
+                boolean isRecording = videoRecorder.onToggleRecord();
+                if (isRecording) {
+                    record.setText("Recording");
+                    Toast.makeText(ListOceanActivity.this, "Started Recording", Toast.LENGTH_SHORT).show();
+                } else {
+                    record.setText("Record");
+                    Toast.makeText(ListOceanActivity.this, "Recording Stopped", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        Button animation = findViewById(R.id.animation);
+        animation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                animationModel(skeletonRenderable);
+            }
+        });
+    }
+
+    private void animationModel(ModelRenderable modelRenderable) {
+        if (modelAnimator != null && modelAnimator.isRunning()) {
+            modelAnimator.end();
+        }
+        int animationCount = modelRenderable.getAnimationDataCount();
+        if (i == animationCount) {
+            i = 0;
+        }
+        AnimationData animationData = modelRenderable.getAnimationData(i);
+        modelAnimator = new ModelAnimator(animationData, modelRenderable);
+        modelAnimator.start();
+        i++;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (ActivityCompat.checkSelfPermission(ListOceanActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        }
     }
 
     private void setupModel() {
@@ -138,6 +209,13 @@ public class ListOceanActivity extends AppCompatActivity {
                     Toast.makeText(this, "Unable to load turtle model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
+        ModelRenderable.builder()
+                .setSource(this, R.raw.skeleton)
+                .build().thenAccept(modelRenderable -> skeletonRenderable = modelRenderable)
+                .exceptionally(throwable -> {
+                    Toast.makeText(this, "Unable to load skeleton model", Toast.LENGTH_SHORT).show();
+                    return null;
+                });
     }
 
     private void map() {
@@ -152,11 +230,12 @@ public class ListOceanActivity extends AppCompatActivity {
         squid = findViewById(R.id.squid);
         starfish = findViewById(R.id.starfish);
         turtle = findViewById(R.id.turtle);
+        skeleton = findViewById(R.id.skeleton);
     }
 
     private void setArrayView() {
         arrayView = new View[]{
-                crab, crayfish, dolphin, jellyfish, octopus, seahorse, shark, squid, starfish, turtle
+                crab, crayfish, dolphin, jellyfish, octopus, seahorse, shark, squid, starfish, turtle, skeleton
         };
     }
 
@@ -192,8 +271,11 @@ public class ListOceanActivity extends AppCompatActivity {
                     } else if (v.getId() == R.id.starfish) {
                         selected = 9;
                         setBackground(v.getId());
-                    } else {
+                    } else if (v.getId() == R.id.turtle) {
                         selected = 10;
+                        setBackground(v.getId());
+                    } else {
+                        selected = 11;
                         setBackground(v.getId());
                     }
                 }
@@ -272,6 +354,13 @@ public class ListOceanActivity extends AppCompatActivity {
             turtle.select();
             addName(anchorNode, turtle, "Turtle");
         }
+        if (selected == 11) {
+            TransformableNode skeleton = new TransformableNode(arFragment.getTransformationSystem());
+            skeleton.setParent(anchorNode);
+            skeleton.setRenderable(skeletonRenderable);
+            skeleton.select();
+            addName(anchorNode, skeleton, "Skeleton");
+        }
     }
 
     private void addName(AnchorNode anchorNode, TransformableNode model, String name) {
@@ -301,9 +390,9 @@ public class ListOceanActivity extends AppCompatActivity {
     private void setBackground(int id) {
         for (int i = 0; i < arrayView.length; i++) {
             if (arrayView[i].getId() == id) {
-                arrayView[i].setBackgroundColor(Color.parseColor("#80333639"));
+                arrayView[i].setBackgroundColor(parseColor("#80333639"));
             } else {
-                arrayView[i].setBackgroundColor(Color.TRANSPARENT);
+                arrayView[i].setBackgroundColor(TRANSPARENT);
             }
         }
     }
