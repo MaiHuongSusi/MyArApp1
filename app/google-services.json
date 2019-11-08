@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "70708172590",
+    "firebase_url": "https://myarapp1-2bdf3.firebaseio.com",
+    "project_id": "myarapp1-2bdf3",
+    "storage_bucket": "myarapp1-2bdf3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70708172590:android:17e9c08b6617421e3fccbf",
+        "android_client_info": {
+          "package_name": "com.example.myarapp1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70708172590-og8m8a835da3malqa0cve760imgeuiku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1T97AljhSNwnhKSWPzXUPyv99iUkIDLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70708172590-og8m8a835da3malqa0cve760imgeuiku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
