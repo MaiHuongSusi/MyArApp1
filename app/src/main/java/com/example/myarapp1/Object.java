@@ -4,14 +4,16 @@ public class Object {
     String name;
     String link_gltf;
     String image;
+    String scale;
 
     public Object() {
     }
 
-    public Object(String name, String link_gltf, String image) {
+    public Object(String name, String link_gltf, String image, String scale) {
         this.name = name;
         this.link_gltf = link_gltf;
         this.image = image;
+        this.scale = scale;
     }
 
     public String getName() {
@@ -36,5 +38,13 @@ public class Object {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getScale() {
+        return scale;
+    }
+
+    public void setScale(String scale) {
+        this.scale = scale;
     }
 }
