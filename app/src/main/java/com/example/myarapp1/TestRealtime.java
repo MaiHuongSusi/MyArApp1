@@ -2,13 +2,14 @@ package com.example.myarapp1;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,65 +27,37 @@ import java.util.ArrayList;
 public class TestRealtime extends AppCompatActivity {
 
     private ArFragment arFragment;
-    private String ASSET_3D = "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/model.gltf";
+    private String ASSET_3D = "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crab/Mesh_Crab.gltf";
 
     // Access a Cloud Firestore instance from your Activity
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     ArrayList<Object> listObjects = new ArrayList<>();
+    private ArrayList<String> listName = new ArrayList<>();
+    private ArrayList<String> listImg = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_realtime);
 
-//        Map<String, Object> model = new HashMap<>();
-//        model.put("link_gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/crayfish/crayfish.gltf");
-//        model.put("image", "https://github.com/MaiHuongSusi/3dModel/blob/master/crayfish/crayfish.png");
-//        model.put("name", "Crayfish");
-//
-//// Add a new document with a generated ID
-//        db.collection("3d_model")
-//                .add(model)
-//                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-//                    @Override
-//                    public void onSuccess(DocumentReference documentReference) {
-//                        Toast.makeText(TestRealtime.this, "Success", Toast.LENGTH_SHORT).show();
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(TestRealtime.this, "Fail", Toast.LENGTH_SHORT).show();
-//                    }
-//                });
+        ArrayList<Object> listObjects = new ArrayList<>();
+        addDataToFirebase();
 
-//        DocumentReference docRef = db.collection("3d_model").document("LBczEWxCHNNDfCkgmLrh");
-//        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                if (task.isSuccessful()) {
-//                    DocumentSnapshot document = task.getResult();
-//                    if (document.exists()) {
-//                        Toast.makeText(TestRealtime.this, "documentdata: " + document.getData(), Toast.LENGTH_SHORT).show();
-//                    } else {
-//                        Toast.makeText(TestRealtime.this, "No search document", Toast.LENGTH_SHORT).show();
-//                    }
-//                } else {
-//                    Toast.makeText(TestRealtime.this, "get fail with " + task.getException(), Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-        db.collection("3d_model").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        db.collection("ocean").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         Object object = document.toObject(Object.class);
                         listObjects.add(object);
+                        listName.add(object.getName());
+                        listImg.add(object.getImage());
                     }
                 } else {
                     Toast.makeText(TestRealtime.this, "Fail to load data from Firebase", Toast.LENGTH_SHORT).show();
                 }
+                initRecyclerView();
+
             }
         });
         arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.testRealtimeFragment);
@@ -93,6 +66,49 @@ public class TestRealtime extends AppCompatActivity {
 
             placeModel(hitResult.createAnchor());
         });
+    }
+    private void initRecyclerView() {
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        RecyclerView recyclerView = findViewById(R.id.recylerview);
+        recyclerView.setLayoutManager(layoutManager);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, listName, listImg);
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void addDataToFirebase() {
+//        Object[] list = {
+//                new Object("Crab", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crab/Mesh_Crab.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crab/crab.png"),
+//                new Object("Crayfish", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crayfish/crayfish.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crayfish/crayfish.png"),
+//                new Object("Dolphin", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/dolphin/NOVELO_DOLPHIN.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/dolphin/dolphin.png"),
+//                new Object("Jellyfish", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/jellyfish/model.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/jellyfish/jellyfish.png"),
+//                new Object("Octopus", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/octopus/octopus.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/octopus/octopus.png"),
+//                new Object("Seahorse", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/seahorse/10044_SeaHorse_v1_iterations-2.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/seahorse/seahorse.png"),
+//                new Object("Shark", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/shark/scene.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/shark/shark.png"),
+//                new Object("Squid", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/squid/giant_squid.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/squid/squid.png"),
+//                new Object("Starfish", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/starfish/starfish.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/starfish/starfish.png"),
+//                new Object("Turtle", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/turtle/turtle.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/turtle/turtle.png")
+//        };
+//        for (int i=0; i<10; i++) {
+//            Map<String, String> model = new HashMap<>();
+//            model.put("link_gltf", list[i].getLinkGltf());
+//            model.put("image", list[i].getImage());
+//            model.put("name", list[i].getName());
+//
+//            db.collection("ocean")
+//                    .add(model)
+//                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                        @Override
+//                        public void onSuccess(DocumentReference documentReference) {
+//                            Toast.makeText(TestRealtime.this, "Success", Toast.LENGTH_SHORT).show();
+//                        }
+//                    })
+//                    .addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception e) {
+//                            Toast.makeText(TestRealtime.this, "Fail", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//        }
     }
 
     private void placeModel(Anchor anchor) {

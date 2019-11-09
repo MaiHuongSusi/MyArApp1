@@ -26,7 +26,7 @@ public class Object {
         return link_gltf;
     }
 
-    public void setLinkGtf(String link_gltf) {
+    public void setLinkGltf(String link_gltf) {
         this.link_gltf = link_gltf;
     }
 
