@@ -1,0 +1,176 @@
+{
+  animations: [
+    {
+      clips: [
+        {
+          name: 'CINEMA_4D_Main',
+        },
+      ],
+      path: 'sampledata/animation/rata-almizclera/source/RATA ALMIZCLERA.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'PIEL',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'PIEL_Rata Almizclera_01',
+        },
+        {
+          normalMap: 'beaver_N_LOW',
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'INTERIOR',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'DIENTES Y LENGUA_Rata Almizclera_01',
+        },
+        {
+          normalMap: 'beaver_N_1',
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'INTERIOR.1',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'DIENTES Y LENGUA_Rata Almizclera_01',
+        },
+        {
+          normalMap: 'beaver_N_1',
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/animation/rata-almizclera/source/RATA ALMIZCLERA.fbx',
+    name: 'RATA ALMIZCLERA',
+    recenter: 'root',
+    scale: 0.5
+  },
+  samplers: [
+    {
+      file: 'sampledata/animation/rata-almizclera/source/RATA ALMIZCLERA.fbm/DIENTES Y LENGUA_Rata Almizclera_01.jpg',
+      name: 'DIENTES Y LENGUA_Rata Almizclera_01',
+      pipeline_name: 'RATA ALMIZCLERA.fbm/DIENTES Y LENGUA_Rata Almizclera_01.jpg',
+    },
+    {
+      file: 'sampledata/animation/rata-almizclera/source/RATA ALMIZCLERA.fbm/beaver_N_1.jpg',
+      name: 'beaver_N_1',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: 'RATA ALMIZCLERA.fbm/beaver_N_1.jpg',
+    },
+    {
+      file: 'sampledata/animation/rata-almizclera/source/RATA ALMIZCLERA.fbm/beaver_N_LOW.jpg',
+      name: 'beaver_N_LOW',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: 'RATA ALMIZCLERA.fbm/beaver_N_LOW.jpg',
+    },
+    {
+      file: 'sampledata/animation/rata-almizclera/source/RATA ALMIZCLERA.fbm/PIEL_SPEC_Rata Almizclera_01.jpg',
+      name: 'PIEL_SPEC_Rata Almizclera_01',
+      pipeline_name: 'RATA ALMIZCLERA.fbm/PIEL_SPEC_Rata Almizclera_01.jpg',
+    },
+    {
+      file: 'sampledata/animation/rata-almizclera/source/RATA ALMIZCLERA.fbm/PIEL_Rata Almizclera_01.jpg',
+      name: 'PIEL_Rata Almizclera_01',
+      pipeline_name: 'RATA ALMIZCLERA.fbm/PIEL_Rata Almizclera_01.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

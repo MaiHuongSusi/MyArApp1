@@ -8,26 +8,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.ar.core.Anchor;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.assets.RenderableSource;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class TestRealtime extends AppCompatActivity {
 
@@ -73,48 +66,48 @@ public class TestRealtime extends AppCompatActivity {
         });
     }
     private void initRecyclerView() {
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView recyclerView = findViewById(R.id.recylerview);
-        recyclerView.setLayoutManager(layoutManager);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, listName, listImg);
-        recyclerView.setAdapter(adapter);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+//        RecyclerView recyclerView = findViewById(R.id.recylerview);
+//        recyclerView.setLayoutManager(layoutManager);
+//        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, listName, listImg);
+//        recyclerView.setAdapter(adapter);
     }
 
     private void addDataToFirebase() {
-        Object[] list = {
-                new Object("Crab", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crab/Mesh_Crab.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crab/crab.png", "0.0111317"),
-                new Object("Crayfish", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crayfish/crayfish.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crayfish/crayfish.png", "0.0208291"),
-                new Object("Dolphin", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/dolphin/NOVELO_DOLPHIN.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/dolphin/dolphin.png", "0.00072810000000000001"),
-                new Object("Jellyfish", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/jellyfish/model.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/jellyfish/jellyfish.png", "0.18810000000000001"),
-                new Object("Octopus", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/octopus/octopus.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/octopus/octopus.png", "0.096654699999999996"),
-                new Object("Seahorse", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/seahorse/10044_SeaHorse_v1_iterations-2.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/seahorse/seahorse.png", "0.052583500000000001"),
-                new Object("Shark", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/shark/scene.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/shark/shark.png", "0.0444637"),
-                new Object("Squid", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/squid/giant_squid.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/squid/squid.png", "0.0003045"),
-                new Object("Starfish", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/starfish/starfish.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/starfish/starfish.png", "0.0069264000000000001"),
-                new Object("Turtle", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/turtle/turtle.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/turtle/turtle.png", "0.0104865")
-        };
-        for (int i=0; i<10; i++) {
-            Map<String, String> model = new HashMap<>();
-            model.put("link_gltf", list[i].getLinkGltf());
-            model.put("image", list[i].getImage());
-            model.put("name", list[i].getName());
-            model.put("scale", list[i].getScale());
-
-            db.collection("ocean")
-                    .add(model)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Toast.makeText(TestRealtime.this, "Success", Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(TestRealtime.this, "Fail", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        }
+//        Object[] list = {
+//                new Object("Crab", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crab/Mesh_Crab.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crab/crab.png", "0.0111317"),
+//                new Object("Crayfish", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crayfish/crayfish.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/crayfish/crayfish.png", "0.0208291"),
+//                new Object("Dolphin", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/dolphin/NOVELO_DOLPHIN.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/dolphin/dolphin.png", "0.00072810000000000001"),
+//                new Object("Jellyfish", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/jellyfish/model.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/jellyfish/jellyfish.png", "0.18810000000000001"),
+//                new Object("Octopus", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/octopus/octopus.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/octopus/octopus.png", "0.096654699999999996"),
+//                new Object("Seahorse", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/seahorse/10044_SeaHorse_v1_iterations-2.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/seahorse/seahorse.png", "0.052583500000000001"),
+//                new Object("Shark", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/shark/scene.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/shark/shark.png", "0.0444637"),
+//                new Object("Squid", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/squid/giant_squid.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/squid/squid.png", "0.0003045"),
+//                new Object("Starfish", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/starfish/starfish.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/starfish/starfish.png", "0.0069264000000000001"),
+//                new Object("Turtle", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/turtle/turtle.gltf", "https://raw.githubusercontent.com/MaiHuongSusi/3dModel/master/ocean/turtle/turtle.png", "0.0104865")
+//        };
+//        for (int i=0; i<10; i++) {
+//            Map<String, String> model = new HashMap<>();
+//            model.put("link_gltf", list[i].getLinkGltf());
+//            model.put("image", list[i].getImage());
+//            model.put("name", list[i].getName());
+//            model.put("scale", list[i].getScale());
+//
+//            db.collection("ocean")
+//                    .add(model)
+//                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                        @Override
+//                        public void onSuccess(DocumentReference documentReference) {
+//                            Toast.makeText(TestRealtime.this, "Success", Toast.LENGTH_SHORT).show();
+//                        }
+//                    })
+//                    .addOnFailureListener(new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception e) {
+//                            Toast.makeText(TestRealtime.this, "Fail", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
+//        }
     }
 
     private void placeModel(Anchor anchor) {

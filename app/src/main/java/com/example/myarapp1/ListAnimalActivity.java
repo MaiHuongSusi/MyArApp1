@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,7 +15,9 @@ import com.google.ar.core.Anchor;
 import com.google.ar.core.HitResult;
 import com.google.ar.core.Plane;
 import com.google.ar.sceneform.AnchorNode;
+import com.google.ar.sceneform.animation.ModelAnimator;
 import com.google.ar.sceneform.math.Vector3;
+import com.google.ar.sceneform.rendering.AnimationData;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.rendering.ViewRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
@@ -27,11 +30,14 @@ public class ListAnimalActivity extends AppCompatActivity {
 
     private ModelRenderable foxRenderable, catRenderable, dogRenderable,
             duckRenderable, horseRenderable, zebraRenderable,
-            sheepRenderable, chickenRenderable, kangarooRenderable, cowRenderable;
-    ImageView fox, cat, dog, duck, horse, zebra, sheep, chicken, kangaroo, cow;
+            sheepRenderable, chickenRenderable, kangarooRenderable, cowRenderable, skeletonRenderable;
+    ImageView fox, cat, dog, duck, horse, zebra, sheep, chicken, kangaroo, cow, skeleton;
     View arrayView[];
     ViewRenderable name_object;
     int selected = 1;
+    Button button;
+    private ModelAnimator modelAnimator;
+    private int i = 0;
 
     @Override
     @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
@@ -51,6 +57,8 @@ public class ListAnimalActivity extends AppCompatActivity {
         //Setup 3D model
         setupModel();
 
+        animations();
+
         arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
             @Override
             public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
@@ -62,6 +70,35 @@ public class ListAnimalActivity extends AppCompatActivity {
             }
         });
     }
+    private void animations() {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                switch (selected) {
+//                    case 10:
+//                        animationModel(skeletonRenderable);
+//                        break;
+//                    case 11:
+//                        animationModel(skeletonRenderable);
+//                        break;
+//                }
+            }
+        });
+    }
+    private void animationModel(ModelRenderable modelRenderable) {
+        if (modelAnimator != null && modelAnimator.isRunning()) {
+            modelAnimator.end();
+        }
+        int animationCount = modelRenderable.getAnimationDataCount();
+        if (i == animationCount) {
+            i = 0;
+        }
+        AnimationData animationData = modelRenderable.getAnimationData(i);
+        modelAnimator = new ModelAnimator(animationData, modelRenderable);
+        modelAnimator.start();
+        i++;
+    }
+
 
     private void setupModel() {
         ViewRenderable.builder()
@@ -138,6 +175,13 @@ public class ListAnimalActivity extends AppCompatActivity {
                     Toast.makeText(this, "Unable to load cow model", Toast.LENGTH_SHORT).show();
                     return null;
                 });
+        ModelRenderable.builder()
+                .setSource(this, R.raw.skeleton)
+                .build().thenAccept(modelRenderable -> skeletonRenderable = modelRenderable)
+                .exceptionally(throwable -> {
+                    Toast.makeText(this, "Unable to load skeleton model", Toast.LENGTH_SHORT).show();
+                    return null;
+                });
     }
 
     private void map() {
@@ -152,11 +196,13 @@ public class ListAnimalActivity extends AppCompatActivity {
         chicken = findViewById(R.id.chicken);
         kangaroo = findViewById(R.id.kangaroo);
         cow = findViewById(R.id.cow);
+        skeleton = findViewById(R.id.skeleton);
+        button = findViewById(R.id.button);
     }
 
     private void setArrayView() {
         arrayView = new View[]{
-                fox, cat, dog, duck, horse, zebra, sheep, chicken, kangaroo, cow
+                fox, cat, dog, duck, horse, zebra, sheep, chicken, kangaroo, cow, skeleton
         };
     }
 
@@ -192,8 +238,11 @@ public class ListAnimalActivity extends AppCompatActivity {
                     } else if (v.getId() == R.id.kangaroo) {
                         selected = 9;
                         setBackground(v.getId());
-                    } else {
+                    } else if (v.getId() == R.id.cow) {
                         selected = 10;
+                        setBackground(v.getId());
+                    }  else {
+                        selected = 11;
                         setBackground(v.getId());
                     }
                 }
@@ -271,6 +320,13 @@ public class ListAnimalActivity extends AppCompatActivity {
             cow.setRenderable(cowRenderable);
             cow.select();
             addName(anchorNode,  cow, "Cow");
+        }
+        if (selected == 11) {
+            TransformableNode cow = new TransformableNode(arFragment.getTransformationSystem());
+            cow.setParent(anchorNode);
+            cow.setRenderable(skeletonRenderable);
+            cow.select();
+            addName(anchorNode,  cow, "skeleton");
         }
     }
 

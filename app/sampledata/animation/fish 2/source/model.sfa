@@ -1,0 +1,75 @@
+{
+  animations: [
+    {
+      clips: [
+        {
+          name: 'Take 001',
+          runtime_name: 'model',
+        },
+      ],
+      path: 'sampledata/animation/fish 2/source/model.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: '01 - Default',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: '4fbd2103765793756379ebf222783fb3',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/animation/fish 2/source/model.fbx',
+    name: 'model',
+    recenter: 'root',
+    scale: 0.5
+  },
+  samplers: [
+    {
+      file: 'sampledata/animation/fish 2/source/model.fbm/4fbd2103765793756379ebf222783fb3.jpg',
+      name: '4fbd2103765793756379ebf222783fb3',
+      pipeline_name: 'model.fbm/4fbd2103765793756379ebf222783fb3.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

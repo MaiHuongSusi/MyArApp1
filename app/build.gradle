@@ -37,10 +37,7 @@ dependencies {
     implementation 'com.google.ar.sceneform:animation:1.13.0'
     implementation 'com.google.ar.sceneform:assets:1.13.0'
     implementation 'com.google.firebase:firebase-firestore:21.2.1'
-
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.google.android.material:material:1.0.0'
 }
 apply plugin: 'com.google.gms.google-services'
 
@@ -389,12 +386,82 @@ sceneform.asset('sampledata/Bike.obj',
         'sampledata/Bike.sfa',
         'src/main/res/raw/bike')
 
-sceneform.asset('sampledata/skeleton/58_Movement_LODa_r01.fbx',
-        'default',
-        'sampledata/skeleton/58_Movement_LODa_r01.sfa',
-        'src/main/res/raw/skeleton')
-
 sceneform.asset('sampledata/Mustache.obj',
         'default',
         'sampledata/Mustache.sfa',
         'src/main/res/raw/mustache')
+
+sceneform.asset('sampledata/solar_system/Earth/Earth.gltf',
+        'default',
+        'sampledata/solar_system/Earth/Earth.sfa',
+        'src/main/assets/Earth')
+
+sceneform.asset('sampledata/solar_system/Jupiter/Jupiter.gltf',
+        'default',
+        'sampledata/solar_system/Jupiter/Jupiter.sfa',
+        'src/main/assets/Jupiter')
+
+sceneform.asset('sampledata/solar_system/Mars/Mars.gltf',
+        'default',
+        'sampledata/solar_system/Mars/Mars.sfa',
+        'src/main/assets/Mars')
+
+sceneform.asset('sampledata/solar_system/Mercury/Mercury.gltf',
+        'default',
+        'sampledata/solar_system/Mercury/Mercury.sfa',
+        'src/main/assets/Mercury')
+
+sceneform.asset('sampledata/solar_system/Neptune/Neptune.gltf',
+        'default',
+        'sampledata/solar_system/Neptune/Neptune.sfa',
+        'src/main/assets/Neptune')
+
+sceneform.asset('sampledata/solar_system/Saturn/Saturn.gltf',
+        'default',
+        'sampledata/solar_system/Saturn/Saturn.sfa',
+        'src/main/assets/Saturn')
+
+sceneform.asset('sampledata/solar_system/Sol/Sol.gltf',
+        'default',
+        'sampledata/solar_system/Sol/Sol.sfa',
+        'src/main/assets/Sol')
+
+sceneform.asset('sampledata/solar_system/Uranus/Uranus.gltf',
+        'default',
+        'sampledata/solar_system/Uranus/Uranus.sfa',
+        'src/main/assets/Uranus')
+
+sceneform.asset('sampledata/solar_system/Venus/Venus.gltf',
+        'default',
+        'sampledata/solar_system/Venus/Venus.sfa',
+        'src/main/assets/Venus')
+
+sceneform.asset('sampledata/animation/astronaut-floating-in-space/source/final astronaut motion.fbx',
+        'default',
+        'sampledata/animation/astronaut-floating-in-space/source/final astronaut motion.sfa',
+        'src/main/res/raw/astronaut')
+
+sceneform.asset('sampledata/animation/cow/source/cow.fbx',
+        'default',
+        'sampledata/animation/cow/source/cow.sfa',
+        'src/main/res/raw/cow1')
+
+sceneform.asset('sampledata/animation/fish 2/source/model.fbx',
+        'default',
+        'sampledata/animation/fish 2/source/model.sfa',
+        'src/main/res/raw/fish')
+
+sceneform.asset('sampledata/animation/hornet/source/hornet.fbx',
+        'default',
+        'sampledata/animation/hornet/source/hornet.sfa',
+        'src/main/res/raw/hornet')
+
+sceneform.asset('sampledata/animation/rata-almizclera/source/RATA ALMIZCLERA.fbx',
+        'default',
+        'sampledata/animation/rata-almizclera/source/RATA ALMIZCLERA.sfa',
+        'src/main/res/raw/rata')
+
+sceneform.asset('sampledata/animation/skeleton/58_Movement_LODa_r01.fbx',
+        'default',
+        'sampledata/animation/skeleton/58_Movement_LODa_r01.sfa',
+        'src/main/res/raw/skeleton')

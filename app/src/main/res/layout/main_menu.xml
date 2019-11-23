@@ -7,6 +7,19 @@
     tools:context=".MainMenuActivity"
     android:background="@color/backgroundWhite">
 
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="165dp"
+        android:layout_height="165dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="39dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/menu_block_2"
+        android:onClick="showSticker"
+        android:text="Sticker"
+        android:textColor="#ffffff" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -38,11 +51,12 @@
         android:layout_height="165dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="33dp"
-        android:layout_marginBottom="26dp"
-        android:background="@drawable/menu_block_2"
-        android:onClick="showSticker"
-        android:text="Sticker"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="192dp"
+        android:background="@drawable/menu_block_3"
+        android:onClick="showAnimation"
+        android:text="Animation"
         android:textColor="#ffffff" />
 
 </RelativeLayout>

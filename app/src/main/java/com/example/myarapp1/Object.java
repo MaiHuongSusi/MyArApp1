@@ -1,6 +1,7 @@
 package com.example.myarapp1;
 
 public class Object {
+    Integer id;
     String name;
     String link_gltf;
     String image;
@@ -9,11 +10,19 @@ public class Object {
     public Object() {
     }
 
-    public Object(String name, String link_gltf, String image, String scale) {
+    public Object(Integer id, String name, String link_gltf, String image, String scale) {
         this.name = name;
         this.link_gltf = link_gltf;
         this.image = image;
         this.scale = scale;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

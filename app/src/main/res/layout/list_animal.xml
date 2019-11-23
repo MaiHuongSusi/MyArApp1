@@ -78,7 +78,22 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/cow" />
+
+            <ImageView
+                android:id="@+id/skeleton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/cow" />
         </LinearLayout>
     </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:text="Button" />
 
 </RelativeLayout>

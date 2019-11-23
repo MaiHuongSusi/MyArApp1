@@ -9,13 +9,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ListTopicActivity extends AppCompatActivity {
-    ImageView ocean, home, person, animal, plant, vehicle;
+    ImageView solar, ocean, home, person, animal, plant, vehicle;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_topic);
 
+        solar = findViewById(R.id.solar);
         ocean = findViewById(R.id.ocean);
         home = findViewById(R.id.home);
         person = findViewById(R.id.person);
@@ -23,7 +24,13 @@ public class ListTopicActivity extends AppCompatActivity {
         plant = findViewById(R.id.plant);
         vehicle = findViewById(R.id.vehicle);
 
-
+        solar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ListTopicActivity.this, SolarActivity.class);
+                startActivity(intent);
+            }
+        });
         ocean.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

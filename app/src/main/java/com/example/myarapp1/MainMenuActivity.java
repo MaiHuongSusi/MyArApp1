@@ -20,7 +20,10 @@ public class MainMenuActivity extends AppCompatActivity {
     }
     public void showSticker(View view) {
         Intent intent = new Intent(MainMenuActivity.this, TestRealtime.class);
-//        Intent intent = new Intent(MainMenuActivity.this, StickerActivity.class);
+        startActivity(intent);
+    }
+    public void showAnimation(View view) {
+        Intent intent = new Intent(MainMenuActivity.this, ListAnimationActivity.class);
         startActivity(intent);
     }
 }

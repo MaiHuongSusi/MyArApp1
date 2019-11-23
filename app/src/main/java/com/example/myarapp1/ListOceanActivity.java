@@ -46,6 +46,7 @@ public class ListOceanActivity extends AppCompatActivity {
     private VideoRecorder videoRecorder;
     private ModelAnimator modelAnimator;
     private int i = 0;
+    Button record, animation;
 
     @Override
     @SuppressWarnings({"AndroidApiChecker", "FutureReturnValueIgnored"})
@@ -210,7 +211,7 @@ public class ListOceanActivity extends AppCompatActivity {
                     return null;
                 });
         ModelRenderable.builder()
-                .setSource(this, R.raw.skeleton)
+                .setSource(this, R.raw.rata)
                 .build().thenAccept(modelRenderable -> skeletonRenderable = modelRenderable)
                 .exceptionally(throwable -> {
                     Toast.makeText(this, "Unable to load skeleton model", Toast.LENGTH_SHORT).show();
@@ -397,6 +398,3 @@ public class ListOceanActivity extends AppCompatActivity {
         }
     }
 }
-
-
-

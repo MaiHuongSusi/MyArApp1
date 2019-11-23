@@ -39,12 +39,26 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainMenuActivity" />
         </activity>
+        <activity android:name=".ListAnimationActivity"
+            android:parentActivityName=".MainMenuActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainMenuActivity" />
+        </activity>
         <activity android:name=".TestRealtime"
             android:parentActivityName=".MainMenuActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainMenuActivity" />
+        </activity>
+        <activity android:name=".ListOtherAnimationActivity"
+            android:parentActivityName=".ListAnimationActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListAnimationActivity" />
         </activity>
         <activity android:name=".ListTopicActivity"
             android:parentActivityName=".MainMenuActivity">
@@ -53,47 +67,54 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainMenuActivity" />
         </activity>
+        <activity android:name=".SolarActivity"
+            android:parentActivityName=".ListTopicActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListTopicActivity" />
+        </activity>
         <activity android:name=".ListOceanActivity"
-            android:parentActivityName=".MainMenuActivity">
+            android:parentActivityName=".ListTopicActivity">
         <!-- The meta-data tag is required if you support API level 15 and lower -->
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainMenuActivity" />
+            android:value=".ListTopicActivity" />
         </activity>
         <activity android:name=".ListHomeActivity"
-            android:parentActivityName=".MainMenuActivity">
+            android:parentActivityName=".ListTopicActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainMenuActivity" />
+                android:value=".ListTopicActivity" />
         </activity>
         <activity android:name=".ListPersonActivity"
-            android:parentActivityName=".MainMenuActivity">
+            android:parentActivityName=".ListTopicActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainMenuActivity" />
+                android:value=".ListTopicActivity" />
         </activity>
         <activity android:name=".ListAnimalActivity"
-            android:parentActivityName=".MainMenuActivity">
+            android:parentActivityName=".ListTopicActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainMenuActivity" />
+                android:value=".ListTopicActivity" />
         </activity>
         <activity android:name=".ListPlantActivity"
-            android:parentActivityName=".MainMenuActivity">
+            android:parentActivityName=".ListTopicActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainMenuActivity" />
+                android:value=".ListTopicActivity" />
         </activity>
         <activity android:name=".ListVehicleActivity"
-            android:parentActivityName=".MainMenuActivity">
+            android:parentActivityName=".ListTopicActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainMenuActivity" />
+                android:value=".ListTopicActivity" />
         </activity>
     </application>
 
