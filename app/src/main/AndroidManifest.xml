@@ -15,6 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
+        android:configChanges="orientation|screenSize"
+        android:screenOrientation="locked"
+        android:exported="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <meta-data android:name="com.google.ar.core" android:value="required" />
 
@@ -46,7 +49,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainMenuActivity" />
         </activity>
-        <activity android:name=".TestRealtime"
+        <activity android:name=".PlayVideoInArScene"
             android:parentActivityName=".MainMenuActivity">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data

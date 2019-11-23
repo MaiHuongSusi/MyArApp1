@@ -19,7 +19,8 @@ public class MainMenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void showSticker(View view) {
-        Intent intent = new Intent(MainMenuActivity.this, TestRealtime.class);
+        Intent intent = new Intent(MainMenuActivity.this, PlayVideoInArScene.class);
+//        Intent intent = new Intent(MainMenuActivity.this, TestRealtime.class);
         startActivity(intent);
     }
     public void showAnimation(View view) {
